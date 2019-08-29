@@ -19,7 +19,7 @@
 <div v-else>
   <div class="row">
 
-         <div  class="col-sm news-holder" v-for="(Producto, index) in displayedProductos">
+         <div  class="col-xs-12 col-sm-4 col-lg-2 col-xl-2" v-for="(Producto, index) in displayedProductos">
               <h2 class="capitalize" :data-cat="Producto.categoria_id">{{Producto.nombre}}</h2>
               <img :src="Producto.imagen" width="100">
               <router-link :to="`/producto/${Producto.id}`">ver</router-link>
@@ -141,21 +141,5 @@ export default {
 </script>
 
 <style>
-h2{
-  color:gray;
-}
-
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to{
-  transform: translateX(10px);
-  opacity: 0;
-}
-
-
 
 </style>

@@ -7,7 +7,7 @@
           <router-link to="/catalogo">Catálogo</router-link>
         </li>
         <li>
-          <router-link to="/tienda">Tienda</router-link>
+          <router-link to="/tiendas">Tienda</router-link>
         </li>
         <li>
           <router-link to="/informacion">Información</router-link>

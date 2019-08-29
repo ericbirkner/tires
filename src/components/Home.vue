@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 /*estilos*/
-
+@import "./styles/style.scss";
 </style>
