@@ -15,11 +15,9 @@
 
 <script>
 
-import Menu from "./Menu";
-
 export default {
     name: "Informacion",
-    components: {Menu},
+    
     data() {
         return {
 

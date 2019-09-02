@@ -2,8 +2,6 @@
 
     <div class="container">
 
-      <Menu></Menu>
-
       <div v-if="loading" class="row text-center">
         <div class="spinner-border" role="status">
           <span class="sr-only">Loading...</span>
@@ -28,11 +26,10 @@
 
 <script>
 import axios from 'axios'
-import Menu from "./Menu";
+
 
 export default {
     name: "Producto",
-    components: {Menu},
     data() {
         return {
           loading:true,

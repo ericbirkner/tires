@@ -1,7 +1,6 @@
 <template>
 <transition name="slide-fade">
 <div class="container">
-<Menu></Menu>
 
 <SelectPais v-on:listenerChild="listenerChild"></SelectPais>
 
@@ -30,13 +29,12 @@
 
 <script>
 import axios from 'axios'
-import Menu from "./Menu";
 import SelectPais from "./SelectPais";
 
 
 export default {
     name: "Tiendas",
-    components: {Menu,SelectPais},
+    components: {SelectPais},
     data() {
         return {
           tiendas:[],

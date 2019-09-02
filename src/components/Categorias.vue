@@ -16,7 +16,6 @@
 
 <script>
 import axios from 'axios'
-import Menu from "./Menu";
 
 export default {
     name: "Categorias",

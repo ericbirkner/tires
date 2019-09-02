@@ -1,7 +1,6 @@
 <template>
 <transition name="slide-fade">
 <div class="container">
-<Menu></Menu>
 <div class="row" v-for="historia in historias">
 
   <div class="col-6" >
@@ -21,11 +20,9 @@
 
 <script>
 import axios from 'axios'
-import Menu from "./Menu";
 
 export default {
     name: "Historia",
-    components: {Menu},
     data() {
         return {
           historias:[

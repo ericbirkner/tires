@@ -1,8 +1,6 @@
 <template>
 <transition name="slide-fade">
 <div class="container">
-  <Menu></Menu>
-
   <div class="row">
     <Categorias></Categorias>
     <Buscador></Buscador>
@@ -48,13 +46,12 @@
 
 <script>
 import axios from 'axios'
-import Menu from "./Menu";
 import Buscador from "./Buscador";
 import Categorias from "./Categorias";
 
 export default {
     name: "Catalogo",
-    components: {Menu,Buscador,Categorias},
+    components: {Buscador,Categorias},
     data() {
         return {
           loading:true,
