@@ -26,3 +26,15 @@ export default {
 }
 
 </script>
+
+<style lang="scss">
+$base-color: #c6538c;
+
+*{
+  color:$base-color;
+}
+
+a.router-link-active, a.router-link-exact-active{
+  color: red;
+}
+</style>
