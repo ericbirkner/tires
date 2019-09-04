@@ -8,3 +8,33 @@
   transform: translateX(10px);
   opacity: 0;
 }
+
+
+body{
+  width:100%;
+  height:100%;
+  display:block;
+  position: relative;
+  margin:0;
+  padding: 0;
+}
+
+#app {
+  width:100%;
+  height:auto;
+  overflow-x:hidden;
+  overflow-y:auto;
+  display:block;
+  background:url('../../src/assets/bg-sitio.jpg') no-repeat top center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.no-gutter{
+  padding-left:0px !important;
+  padding-right:0px !important;
+}
+
+
+
