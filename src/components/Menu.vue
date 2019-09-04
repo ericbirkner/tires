@@ -3,7 +3,7 @@
   <div id="menu-nav" class="container-fluid no-gutter">
     <div class="wrapper-menu">
       <div class="row">
-        <div class="col">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
           <div class="logo-menu">
             <router-link to="/">
               <img src="../assets/logo-sumitomo.png" />
@@ -13,7 +13,6 @@
         <div class="col">
           <div class="nav">
             <ul>
-              Cuidado del neumático – Distribuidores - Contacto (esta no lo habíamos considerado en el boceto, pero debemos incluirla). 
               <li>
                 <router-link to="/"><p>HOME</p></router-link>
               </li>
@@ -32,7 +31,6 @@
               <li>
                 <router-link to="/contacto"><p>CONTACTO</p></router-link>
               </li>
-              
             </ul>
           </div>
           

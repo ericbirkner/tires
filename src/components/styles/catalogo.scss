@@ -1,0 +1,47 @@
+
+// :::::::::::::::::::: categorias :::::::::::::::::::::::
+
+.box-menu-categorias {
+    float:left;
+    ul{
+      float:right;
+      margin:0;
+      padding:0;
+      text-align: center;
+      background: #ffffff;
+      padding:0 40px 0 40px;
+      -webkit-border-top-left-radius: 40px;
+      -moz-border-radius-topleft: 40px;
+      border-top-left-radius: 40px;
+      li{
+          display:inline-block;
+          vertical-align:top;
+          a{
+              width:100%;
+              height:100%;
+              display:block;
+              text-decoration: none;
+              p{
+                  color:#33598b;
+                  text-align:center;
+                  line-height: 1;
+                  margin:0;
+                  padding: 10px 10px 10px 10px;
+              }
+          }
+      }
+  }
+}
+
+.thumb-producto{
+    border:1px solid red;
+    .head{
+        h2{
+            margin:0;
+            padding:0;
+            text-align: center;
+            display:block;
+        }
+    }
+}
+  

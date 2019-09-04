@@ -1,5 +1,5 @@
 <template>
-<transition name="slide-fade">
+<!-- <transition name="slide-fade"></transition> -->
   <div class="container-fluid no-gutter box-home">
     <div class="wrapper-home">
       <div class="row">
@@ -22,7 +22,6 @@
     
   </div>
 
-</transition>
 
 </template>
 

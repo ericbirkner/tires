@@ -1,5 +1,5 @@
 <template>
-    <div class="col-lg-6 col-xl-6">
+    <div class="col">
       <div class="form-group has-search">
         <span class="fa fa-search form-control-feedback"></span>
         <input v-on:keyup="buscar" type="text" class="form-control" placeholder="Buscar">
