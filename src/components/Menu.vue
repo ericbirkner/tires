@@ -13,18 +13,26 @@
         <div class="col">
           <div class="nav">
             <ul>
+              Cuidado del neumático – Distribuidores - Contacto (esta no lo habíamos considerado en el boceto, pero debemos incluirla). 
+              <li>
+                <router-link to="/"><p>HOME</p></router-link>
+              </li>
               <li>
                 <router-link to="/catalogo"><p>CATÁLOGO</p></router-link>
               </li>
               <li>
-                <router-link to="/tiendas"><p>TIENDA</p></router-link>
-              </li>
-              <li>
-                <router-link to="/informacion"><p>INFORMACION</p></router-link>
-              </li>
-              <li>
                 <router-link to="/historia"><p>HISTORIA</p></router-link>
               </li>
+              <li>
+                <router-link to="/informacion"><p>CUIDADO DEL NEUMATICO</p></router-link>
+              </li>
+              <li>
+                <router-link to="/tiendas"><p>DISTRIBUIDORES</p></router-link>
+              </li>
+              <li>
+                <router-link to="/contacto"><p>CONTACTO</p></router-link>
+              </li>
+              
             </ul>
           </div>
           
