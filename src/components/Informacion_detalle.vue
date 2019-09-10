@@ -1,26 +1,26 @@
 <template>
-<transition name="slide-fade">
-<div class="container">
-<div class="row">
+<!-- <transition name="slide-fade"></transition> -->
 
-  <div v-if="loading" class="row text-center">
-    <div class="col">
-     <div class="spinner-border" role="status">
-       <span class="sr-only">Cargando...</span>
-     </div>
-   </div>
-  </div>
+  <div class="container-fluid">
+    <div class="row">
+
+      <div v-if="loading" class="row text-center">
+        <div class="col">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Cargando...</span>
+        </div>
+      </div>
+      </div>
 
 
-    <div class="col">
-      <h1>{{informacion.titulo}}</h1>
-      <img :src="informacion.imagen" class="img-fluid">
-      <div v-html="informacion.cuerpo"></div>
+        <div class="col">
+          <h1>{{informacion.titulo}}</h1>
+          <img :src="informacion.imagen" class="img-fluid">
+          <div v-html="informacion.cuerpo"></div>
+        </div>
+
     </div>
-
-</div>
-</div>
-</transition>
+  </div>
 
 </template>
 

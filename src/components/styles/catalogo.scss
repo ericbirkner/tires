@@ -1,6 +1,8 @@
-
+@import './util.scss';
 // :::::::::::::::::::: categorias :::::::::::::::::::::::
-
+.box-head-catalogo{
+    margin:0 0 90px 0;
+}
 .box-menu-categorias {
     float:left;
     ul{
@@ -34,13 +36,109 @@
 }
 
 .thumb-producto{
-    border:1px solid red;
+    a{
+        text-decoration: none;
+    }
+    // border:1px solid red;
     .head{
+        border:1px solid #ffffff;
+        border-radius:4px;
         h2{
             margin:0;
-            padding:0;
+            padding:5px 10px 5px 10px;
             text-align: center;
             display:block;
+            font-size: 16px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: 2.64px;
+            text-align: center;
+            color: #fdfdfd;
+
+            @include truncate(100%);
+
+        }
+    }
+    .thumb{
+        width:90%;
+        max-width:159px;
+        display: block;
+        margin:28px auto 40px auto;
+        img{
+            width:100%;
+        }
+    }
+    .btn-ver{
+        width:100%;
+        display:block;
+        p{
+            font-size: 22px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: 2.64px;
+            text-align: center;
+            color: #fdfdfd;
+        }
+    }
+}
+
+.thumb-producto:hover{
+    .head{
+        h2{
+            @include transition(.5s ease);
+            background: #ffffff;
+            color:#33598b;
+        }
+    }
+}
+
+
+.paginador{
+    display:block;
+    margin: 0 auto 0 auto;
+    text-align:center;
+    .prev,
+    .next{
+        width:20px;
+        position: absolute;
+        top:0;
+        a{
+            color:#ffffff;
+            padding:0;
+            text-decoration: none;
+        }
+    }
+    .next{
+        right:-20px;
+    }
+    .prev{
+        left:-20px;
+    }
+    span{
+        display: inline-block;
+        vertical-align: top;
+        padding:5px;
+        font-size:10px;
+        a{
+            color:#ffffff;
+            text-decoration: none;
+        }
+        .router-link-active{
+            .num{
+                @include scale(1.5);
+                @include transition(.5s ease);
+            }
+            
+        }
+    }
+    span:hover{
+        .num{
+            @include scale(1.2);
+            @include transition(.25s ease);
         }
     }
 }

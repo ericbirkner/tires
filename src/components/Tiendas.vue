@@ -1,36 +1,60 @@
 <template>
-<transition name="slide-fade">
-<div class="container">
 
-<SelectPais v-on:listenerChild="listenerChild"></SelectPais>
-
-<div v-if="loading" class="row text-center">
-  <div class="col">
-   <div class="spinner-border" role="status">
-     <span class="sr-only">Cargando...</span>
-   </div>
- </div>
-</div>
-
-<div class="row" v-else>
-  <div class="col-xs-12 col-sm-4 col-lg-2 col-xl-2" v-for="tienda in displayedTiendas">
-      <h5>{{tienda.nombre}}</h5>
-      <div>{{tienda.direccion}}</div>
-      <div>{{tienda.telefono}}</div>
-      <div>{{tienda.email}}</div>
-      <div>{{tienda.web}}</div>
+  <div class="container">
+    <div class="head-tiendas">
+      <h2>
+        Encuentra tu tienda
+      </h2>
+    </div>
+    <SelectPais v-on:listenerChild="listenerChild"></SelectPais>
+    <div v-if="loading" class="row text-center">
+      <div class="col">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Cargando...</span>
+      </div>
+    </div>
+    </div>
+    <div class="row" v-else>
+      <div class="col-xs-12 col-sm-4 col-lg-2 col-xl-2" v-for="tienda in displayedTiendas">
+        <div class="box-tiendas">
+          <div class="thumb">
+            <div class="img">
+              <img src="../assets/tienda.png" />
+            </div>
+          </div>
+          <div class="titulo">
+            <h5>{{tienda.nombre}}</h5>
+          </div>
+          <div class="descripcion">
+            <p>
+              {{tienda.direccion}}
+            </p>
+            <p>
+              {{tienda.telefono}}
+            </p>
+          </div>
+          <div class="contacto">
+            <a :href="'tienda.email'">
+              <p>
+                {{tienda.email}}
+              </p>
+            </a>
+            <p>
+              <a :href="''">
+                {{tienda.web}}
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-
-</div>
-</transition>
 
 </template>
 
 <script>
 import axios from 'axios'
 import SelectPais from "./SelectPais";
-
 
 export default {
     name: "Tiendas",
@@ -82,7 +106,7 @@ export default {
 }
 </script>
 
-<style>
-/*estilos*/
+<style lang="scss">
+  @import "./styles/style.scss";
 
 </style>

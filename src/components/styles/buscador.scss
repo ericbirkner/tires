@@ -1,0 +1,32 @@
+@import './util.scss';
+.box-buscador{
+    position: relative;
+    border-bottom:1px solid #ffffff;
+    input {
+        background:transparent !important;
+        border:0px solid;
+        outline:none;
+        padding:0 0 0 40px;
+        color: #ffffff !important;
+    }
+    @include placeholder (#ffffff);
+    span{
+        position: absolute;
+        top:11px;
+        left:0;
+        color: #ffffff;
+        
+    }
+}
+
+.form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}

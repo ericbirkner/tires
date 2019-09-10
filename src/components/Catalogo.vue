@@ -1,7 +1,7 @@
 <template>
   <!-- <transition name="slide-fade"></transition> -->
   <div class="container-fluid">
-    <div class="row">
+    <div class="row box-head-catalogo">
       <Categorias></Categorias>
       <Buscador></Buscador>
     </div>
@@ -17,30 +17,50 @@
         <div  class="col-xs-12 col-sm-4 col-lg-2 col-xl-2" v-for="(Producto, index) in displayedProductos">
 
           <div class="thumb-producto">
-
-            <div class="head">
-              <h2 class="capitalize" :data-cat="Producto.categoria_id">{{Producto.nombre}}</h2>
-            </div>
-            <div class="thumb">
-              <img :src="'./src/assets/'+Producto.imagen" width="100">
-            </div>
-            <div class="btn-ver">
-              <router-link :to="`/producto/${Producto.id}`">ver</router-link>
-            </div>
+            <router-link :to="`/producto/${Producto.id}`">
+              <div class="head">
+                <h2 class="capitalize" :data-cat="Producto.categoria_id">{{Producto.nombre}}</h2>
+              </div>
+              <div class="thumb">
+                <img :src="'./src/assets/'+Producto.imagen" width="100">
+              </div>
+              <div class="btn-ver">
+                <p>
+                  ver  
+                </p>
+              </div>
+            </router-link>
+            
           </div>
 
         </div>
       </div>
 
       <div class="row">
-        <div class="clearfix btn-group col-md-2 offset-md-5 m-4">
-          <router-link :to="`/catalogo/page/${page-1}`" class="btn btn-sm btn-outline-secondary" v-if="page != 1"> << </router-link>
-          <span v-for="pageNumber in pages">
-          <router-link :to="`/catalogo/page/${pageNumber}`" v-on:click="set_clase" class="btn btn-sm btn-outline-secondary"> {{pageNumber}} </router-link>
-          </span>
-          <router-link :to="`/catalogo/page/${page+1}`" class="btn btn-sm btn-outline-secondary" v-if="page < pages.length"> >> </router-link>
+        <div class="paginador">
+          <div class="col no-gutter">
+            <div>
+              <div class="prev">
+                <router-link :to="`/catalogo/page/${page-1}`" v-if="page != 1"> < </router-link>
+              </div>
+
+              <span v-for="pageNumber in pages">
+                <router-link :to="`/catalogo/page/${pageNumber}`" v-on:click="set_clase">
+                  <div class="num">
+                    {{pageNumber}}
+                  </div>
+                </router-link>
+              </span>
+
+              <div class="next">
+                <router-link :to="`/catalogo/page/${page+1}`" v-if="page < pages.length"> > </router-link>
+              </div>
+              
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
 
   </div>
@@ -169,6 +189,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./styles/style.scss";
+  @import "./styles/style.scss";
   @import "./styles/catalogo.scss";
 </style>
