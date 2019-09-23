@@ -1,10 +1,10 @@
 <template>
 
-<div class="container">
+<div class="container-fluid">
 <div class="row">
 <!-- <transition name="slide-fade"></transition> -->
-  <div class="col">
-    <div class="box-slider">
+  <div class="col no-gutter-m">
+    <div class="box-slider" ref="thumb">
       <div class="wrapper-slider">
         <span class="border-top"></span>
         <span class="border-bottom"></span>
@@ -12,9 +12,11 @@
           <!-- slides -->
           <swiper-slide v-for="historia in historias" v-bind:key="historia.id">
             <div class="row">
-              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 thumb-slide">
+
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 thumb-slide web">
                 <img :src="'./src/assets/'+historia.imagen" class="img-fluid"/>
               </div>
+
               <div class="col">
                 <div class="datos-historia">
                   <h2>
@@ -24,7 +26,6 @@
                     {{historia.titulo}}
                   </h4>
                 </div>
-                
               </div>
             </div>
             <div class="row">
@@ -37,6 +38,9 @@
                   </vue-scrollbar>
                 </div>
               </div>
+              <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 thumb-slide movil">
+                <img :src="'./src/assets/'+historia.imagen" class="img-fluid"/>
+              </div>
             </div>
           </swiper-slide>
           <!-- slides -->
@@ -44,7 +48,7 @@
       </div>
     </div>
   </div>
-  <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 box-control">
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 box-control no-gutter-m web">
     <div class="box-control-slider">
       <div class="box-ctrl">
         <div class="swiper-pagination swiper-pagination-bullets"  slot="pagination"></div>
@@ -52,9 +56,28 @@
       <div class="swiper-button-prev" slot="button-prev"></div>
       <div class="swiper-button-next" slot="button-next"></div>
     </div>
-    
   </div>
-  
+
+  <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 box-control-movil movil">
+    <div class="row">
+      <div class="col">
+        <h2> HISTORIA</h2>
+      </div>
+      <div class="col">
+        <div class="box-select-ano">
+          <!-- <v-select :options="historias.ano"></v-select> -->
+          <select v-model="ano_selected" @change="onSetSelect($event)">
+            <option v-for="fecha in historias" :key="fecha.id">
+              {{ fecha.ano }}
+            </option>
+          </select>
+          <!-- {{ historias[0].ano }} -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 
 
 
@@ -80,28 +103,45 @@ import 'swiper/dist/css/swiper.css';
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
 import VueScrollbar from 'vue2-scrollbar';
 import axios from 'axios';
+import { TweenMax } from 'gsap';
+import { fxPgInSingle, fxPgOut } from '../helpers/Devfun';
 
 const anos = [];
+
 
 export default {
     name: "Historia",
     data() {
         return {
+          ano_selected:'',
           historias:[
             {
-              "id":2,
+              "id":0,
               "titulo":"otro a\u00f1o mas antiguo",
               "ano":"1865",
-              "descripcion":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "descripcion":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "imagen":"slide-1.png"
+            },{
+              "id":1,
+              "titulo":"otro a\u00f1o mas antiguo",
+              "ano":"1909",
+              "descripcion":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
               "imagen":"slide-1.png"
             },
             {
-              "id":1,
-              "titulo":"a\u00f1o de ejemplo",
-              "ano":"1909",
-              "descripcion":"<p>22 -Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><\/p>",
+              "id":2,
+              "titulo":"otro a\u00f1o mas antiguo",
+              "ano":"2000",
+              "descripcion":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
               "imagen":"slide-1.png"
-            }
+            },
+            {
+              "id":3,
+              "titulo":"otro a\u00f1o mas antiguo",
+              "ano":"2019",
+              "descripcion":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "imagen":"slide-1.png"
+            },
           ],
           swiperOption: {
             direction: 'vertical',
@@ -127,28 +167,45 @@ export default {
       swiperSlide,
       VueScrollbar
     },
-    methods: {},
+    methods: {
+      onSetSelect(event) {
+        console.log('fecha seleccionada', );
+        const goToSlider = anos.indexOf(event.target.value)
+        this.swiper.slideTo(goToSlider, 1000, true);
+      },
+      getAnosData: function(newVal){
+        const goToSlider = anos.indexOf(newVal)
+        this.swiper.slideTo(goToSlider, 1000, false);
+      },
+      enterAnim(done){
+        // entra
+        fxPgInSingle(this.$el, this.$refs.thumb, done);
+      },
+      leaveAnim(done){
+        // sale
+        fxPgOut(this.$el, this.$refs.thumb, done);
+      }
+    },
     computed: {
       swiper() {
         return this.$refs.mySwiper.swiper
       }
     },
+    watch: {
+      ano_selected( newVal, oldVal) {
+        // this.getAnosData(newVal);
+      }
+    },
     created: function() {
-      console.log(this.historias);
-
+      console.log('created', this.historias);
       this.historias.forEach(element => {
-        console.log('element', element.ano);  
-        this.anos = element.ano;
-
-        console.log('this.anos', this.anos);  
-
+        anos.push(element.ano);
       });
-      
-      
+      // console.log('created', anos);
     },
     mounted() {
       console.log('this.swiperthis.swiper', this.swiper)
-      this.swiper.slideTo(0, 1000, false)
+      this.swiper.slideTo(0, 1000, false);
     }
 }
 </script>

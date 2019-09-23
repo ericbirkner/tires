@@ -1,5 +1,5 @@
 <template>
-  <div class="col">
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 no-gutter-m">
     <div class="box-menu-categorias">
       <ul>
         <li v-for="categoria in categorias">

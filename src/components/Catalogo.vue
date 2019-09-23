@@ -2,20 +2,20 @@
   <!-- <transition name="slide-fade"></transition> -->
   <div class="container-fluid">
     <div class="row box-head-catalogo">
+      <div class="movil"><Buscador></Buscador></div>
       <Categorias></Categorias>
-      <Buscador></Buscador>
+      <div class="web"><Buscador></Buscador></div>
     </div>
-    <div v-if="loading" class="row text-center">
+    <!-- <div v-if="loading" class="row text-center">
       <div class="col">
-      <div class="spinner-border" role="status">
-        <span class="sr-only">Cargando...</span>
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Cargando...</span>
+        </div>
       </div>
-    </div>
-    </div>
-    <div v-else>
+    </div> -->
+    <div>
       <div class="row">
-        <div  class="col-xs-12 col-sm-4 col-lg-2 col-xl-2" v-for="(Producto, index) in displayedProductos">
-
+        <div class="col-xs-6 col-sm-4 col-lg-2 col-lg-2" v-for="(Producto, index) in displayedProductos" ref="thumb">
           <div class="thumb-producto">
             <router-link :to="`/producto/${Producto.id}`">
               <div class="head">
@@ -26,11 +26,11 @@
               </div>
               <div class="btn-ver">
                 <p>
-                  ver  
+                  ver
                 </p>
               </div>
             </router-link>
-            
+
           </div>
 
         </div>
@@ -55,7 +55,7 @@
               <div class="next">
                 <router-link :to="`/catalogo/page/${page+1}`" v-if="page < pages.length"> > </router-link>
               </div>
-              
+
             </div>
           </div>
         </div>
@@ -70,6 +70,8 @@
 import axios from 'axios'
 import Buscador from "./Buscador";
 import Categorias from "./Categorias";
+import { TweenMax } from 'gsap';
+import { fxPgIn, fxPgOut } from '../helpers/Devfun';
 
 export default {
     name: "Catalogo",
@@ -153,6 +155,14 @@ export default {
         },
         set_clase(event){
           console.log(event.target);
+        },
+        enterAnim(done){
+          // entra
+          fxPgIn(this.$el, this.$refs.thumb, done);
+        },
+        leaveAnim(done){
+          // sale
+          fxPgOut(this.$el, this.$refs.thumb, done);
         }
     },
     computed: {

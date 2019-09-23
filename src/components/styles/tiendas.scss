@@ -1,4 +1,5 @@
 @import './util.scss';
+@import './mq.scss';
 :focus {
     outline: -webkit-focus-ring-color auto 0px !important;
     outline: 0 !important;
@@ -25,21 +26,32 @@
 }
 .head-tiendas{
     margin:0 0 70px 0;
+    @include respond-to($iphone_xl) {
+      margin:0 0 30px 0;
+    }
     h2{
-        font-size: 49px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: center;
-        color: #fdfdfd;
+      font-family: 'FuturaStd-Book';
+      font-size: 49px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #fdfdfd;
+
+      @include respond-to($iphone_xl) {
+        font-size: 30px;
+      }
     }
 }
 .box-tiendas{
     background: transparent;
     margin:110px 0 0 0;
     padding:0 10px 15px 10px;
+    @include respond-to($iphone_xl) {
+      margin:40px 0 0 0;
+    }
     // border:1px solid red;
     .thumb{
         width:100%;
@@ -54,11 +66,11 @@
                 width:100%;
             }
         }
-        
+
     }
     .titulo{
         h5{
-           
+
             margin:5px 0 10px 0;
             padding:0;
 
@@ -89,7 +101,7 @@
         }
     }
     .contacto{
-        
+
         p{
             @include truncate(90%);
             margin:0 0 3px 0;

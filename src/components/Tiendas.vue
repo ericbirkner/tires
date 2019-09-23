@@ -15,7 +15,7 @@
     </div>
     </div>
     <div class="row" v-else>
-      <div class="col-xs-12 col-sm-4 col-lg-2 col-xl-2" v-for="tienda in displayedTiendas">
+      <div class="col-xs-6 col-sm-4 col-lg-2 col-xl-2" v-for="tienda in displayedTiendas">
         <div class="box-tiendas">
           <div class="thumb">
             <div class="img">
@@ -55,7 +55,8 @@
 <script>
 import axios from 'axios'
 import SelectPais from "./SelectPais";
-
+import { TweenMax } from 'gsap';
+import { fxPgInSingle, fxPgOut } from '../helpers/Devfun';
 export default {
     name: "Tiendas",
     components: {SelectPais},
@@ -86,6 +87,14 @@ export default {
       },
       listenerChild(reply) {
         this.idCiudad = reply;
+      },
+      enterAnim(done){
+        // entra
+        fxPgInSingle(this.$el, done);
+      },
+      leaveAnim(done){
+        // sale
+        fxPgOut(this.$el, this.$refs.thumb, done);
       }
     },
     computed: {
