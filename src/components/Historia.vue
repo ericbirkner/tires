@@ -39,7 +39,7 @@
                 </div>
               </div>
               <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 thumb-slide movil">
-                <img :src="'./src/assets/'+historia.imagen" class="img-fluid"/>
+                <img :src="'img/'+historia.imagen" class="img-fluid"/>
               </div>
             </div>
           </swiper-slide>
@@ -78,19 +78,6 @@
 
   </div>
 
-
-
-
-
-  <!-- <div class="col-6" >
-    <img :src="historia.imagen" class="img-fluid"/>
-  </div>
-
-  <div class="col-6">
-    <h3>{{historia.ano}}</h3>
-    <h6>{{historia.titulo}}</h6>
-    <p v-html="historia.descripcion"></p>
-  </div> -->
 
 </div>
 </div>
