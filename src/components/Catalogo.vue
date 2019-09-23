@@ -22,7 +22,7 @@
                 <h2 class="capitalize" :data-cat="Producto.categoria_id">{{Producto.nombre}}</h2>
               </div>
               <div class="thumb">
-                <img :src="'./src/assets/'+Producto.imagen" width="100">
+                <img :src="'img/'+Producto.imagen" width="100">
               </div>
               <div class="btn-ver">
                 <p>
@@ -103,34 +103,34 @@ export default {
             */
             this.productos= [
               {"id":13,"nombre":"3. AS P01","categoria_id":2,"imagen":"neumatico.png"},
-              {"id":2,"nombre":"Encounter AT Angle","categoria_id":1,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/ndlnbkzk66hq2oskn44v\/2. Sumitomo-Encounter-AT-Angle.png"},
-              {"id":1,"nombre":"ENCOUNTER HT","categoria_id":1,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/cf6pcgmnybi0oxq2uyob\/1. ENCOUNTER HT.png"},
-              {"id":12,"nombre":"HTR 900","categoria_id":2,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/tx7rtehsyd72qz06lhwc\/2. Ficha HTR 900.png"},
-              {"id":3,"nombre":"HTR SP HP","categoria_id":1,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/keitvebri05tmin3ybwu\/3. HTR_SP_HP.png"},
-              {"id":15,"nombre":"HTR T4","categoria_id":2,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/jufsnjcv0bsr5fgcqpdd\/5. HTR T4.png"},
-              {"id":14,"nombre":"HTR200","categoria_id":2,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/bsm53qxsjbgcvertxrpl\/4. HTR200.png"},
-              {"id":16,"nombre":"HTR2000","categoria_id":2,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/ddj0c9p3vomrrf6uz2mm\/7. HTR2000.png"},
-              {"id":11,"nombre":"HTRZ3","categoria_id":2,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/pqxmqaijzxghyxdwzirh\/1. HTRZ3.png"},
-              {"id":7,"nombre":"SL717","categoria_id":4,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/a74n7iapbqnfktsotikd\/1. SL717.png"},
-              {"id":8,"nombre":"SL725","categoria_id":4,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/gypyzxlmmt5i1o0vdgqf\/2. SL725.png"},
-              {"id":9,"nombre":"SL726","categoria_id":4,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/bvfv57entb4lluop9mbb\/3. SL726.png"},
-              {"id":10,"nombre":"SL825","categoria_id":4,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/zas4iupteotqhkspymga\/4. SL825.png"},
-              {"id":4,"nombre":"SL830","categoria_id":1,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/rdyumaajngby1r8svtnz\/4. SL830.png"},
-              {"id":5,"nombre":"SL840","categoria_id":1,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/dytbmuyl51ywcqmjhrrt\/5. SL840.png"},
-              {"id":6,"nombre":"SL850","categoria_id":1,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/buefrojbzvpsqi0tjh4q\/6. SL850.png"},
-              {"id":25,"nombre":"ST506","categoria_id":3,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/5pc34fxllhzc4mfhhxnq\/9. ST506.png"},
-              {"id":24,"nombre":"ST508","categoria_id":3,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/m4fpkfsa5w4h3q133y3v\/8. ST508.png"},
-              {"id":23,"nombre":"ST518","categoria_id":3,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/myb0cahx2ccn3qjzrswy\/7. ST518.png"},
-              {"id":27,"nombre":"ST636A","categoria_id":3,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/cfsmroh71yl1cbdjw5rd\/11. ST636A.png"},
-              {"id":19,"nombre":"ST709 2R","categoria_id":3,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/nh6nbidduvuc7crzxtur\/3. ST709_2R.png"},
-              {"id":17,"nombre":"ST718","categoria_id":3,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/x8ychpnjydu5nxpcxnp5\/1. ST718.png"},
-              {"id":26,"nombre":"ST720","categoria_id":3,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/voajxufbrz8yvvp5sitr\/10. ST720.png"},
-              {"id":20,"nombre":"ST727","categoria_id":3,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/hhixmnkgunhx78vnd8uf\/4. ST727.png"},
-              {"id":18,"nombre":"ST738","categoria_id":3,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/anjxzhtpq0lhxd3me6mt\/2. ST738.png"},
-              {"id":21,"nombre":"ST770","categoria_id":3,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/lduq2zjqnkqvoeruckbv\/5. ST770.png"},
-              {"id":29,"nombre":"ST791","categoria_id":3,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/4mhsnsuyy0gw69fhri20\/13. ST 791.png"},
-              {"id":28,"nombre":"ST900","categoria_id":3,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/qlujt0hkfbzrrus6z04a\/12. ST900.png"},
-              {"id":22,"nombre":"ST908","categoria_id":3,"imagen":"http:\/\/localhost\/sumitomo-tires\/files\/j6svy4xbraosxkqvqcmk\/6. ST908.png"}];
+              {"id":2,"nombre":"Encounter AT Angle","categoria_id":1,"imagen":"neumatico.png"},
+              {"id":1,"nombre":"ENCOUNTER HT","categoria_id":1,"imagen":"neumatico.png"},
+              {"id":12,"nombre":"HTR 900","categoria_id":2,"imagen":"neumatico.png"},
+              {"id":3,"nombre":"HTR SP HP","categoria_id":1,"imagen":"neumatico.png"},
+              {"id":15,"nombre":"HTR T4","categoria_id":2,"imagen":"neumatico.png"},
+              {"id":14,"nombre":"HTR200","categoria_id":2,"imagen":"neumatico.png"},
+              {"id":16,"nombre":"HTR2000","categoria_id":2,"imagen":"neumatico.png"},
+              {"id":11,"nombre":"HTRZ3","categoria_id":2,"imagen":"neumatico.png"},
+              {"id":7,"nombre":"SL717","categoria_id":4,"imagen":"neumatico.png"},
+              {"id":8,"nombre":"SL725","categoria_id":4,"imagen":"neumatico.png"},
+              {"id":9,"nombre":"SL726","categoria_id":4,"imagen":"neumatico.png"},
+              {"id":10,"nombre":"SL825","categoria_id":4,"imagen":"neumatico.png"},
+              {"id":4,"nombre":"SL830","categoria_id":1,"imagen":"neumatico.png"},
+              {"id":5,"nombre":"SL840","categoria_id":1,"imagen":"neumatico.png"},
+              {"id":6,"nombre":"SL850","categoria_id":1,"imagen":"neumatico.png"},
+              {"id":25,"nombre":"ST506","categoria_id":3,"imagen":"neumatico.png"},
+              {"id":24,"nombre":"ST508","categoria_id":3,"imagen":"neumatico.png"},
+              {"id":23,"nombre":"ST518","categoria_id":3,"imagen":"neumatico.png"},
+              {"id":27,"nombre":"ST636A","categoria_id":3,"imagen":"neumatico.png"},
+              {"id":19,"nombre":"ST709 2R","categoria_id":3,"imagen":"neumatico.png"},
+              {"id":17,"nombre":"ST718","categoria_id":3,"imagen":"neumatico.png"},
+              {"id":26,"nombre":"ST720","categoria_id":3,"imagen":"neumatico.png"},
+              {"id":20,"nombre":"ST727","categoria_id":3,"imagen":"neumatico.png"},
+              {"id":18,"nombre":"ST738","categoria_id":3,"imagen":"neumatico.png"},
+              {"id":21,"nombre":"ST770","categoria_id":3,"imagen":"neumatico.png"},
+              {"id":29,"nombre":"ST791","categoria_id":3,"imagen":"neumatico.png"},
+              {"id":28,"nombre":"ST900","categoria_id":3,"imagen":"neumatico.png"},
+              {"id":22,"nombre":"ST908","categoria_id":3,"imagen":"neumatico.png"}];
             this.loading = false;
             console.log(this.productos);
         },

@@ -8,13 +8,13 @@
               <div class="thumb-img">
 
                 <!-- version web -->
-                <img class="web" :src="'./src/assets/' + categoria.thumb" />
+                <img class="web" :src="'img/' + categoria.thumb" />
 
                 <!-- version movil -->
-                <img class="movil" :src="'./src/assets/' + categoria.thumb_m" />
+                <img class="movil" :src="'img/' + categoria.thumb_m" />
 
                 <div class="over-thumb">
-                  <div class="plus"><img src="./../assets/plus.png" /></div>
+                  <div class="plus"><img src="img/plus.png" /></div>
                 </div>
               </div>
               <div class="nombre-categoria">

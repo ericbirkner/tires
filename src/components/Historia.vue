@@ -14,7 +14,7 @@
             <div class="row">
 
               <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 thumb-slide web">
-                <img :src="'./src/assets/'+historia.imagen" class="img-fluid"/>
+                <img :src="'img/'+historia.imagen" class="img-fluid"/>
               </div>
 
               <div class="col">

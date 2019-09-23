@@ -16,7 +16,7 @@
           <div class="row">
             <div class="col">
               <div class="thumb-producto">
-                <img :src="'./src/assets/'+producto.imagen" class="img-fluid">
+                <img :src="'img/'+producto.imagen" class="img-fluid">
               </div>
             </div>
             <div class="col movil">

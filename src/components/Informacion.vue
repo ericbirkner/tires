@@ -103,26 +103,26 @@ export default {
           {
             "id":1,
             "titulo":"PRESI\u00d3N CORRECTA DE LOS NEUM\u00c1TICOS",
-            "imagen":"./src/assets/informacion-1.png",
-            "imagen_m":"./src/assets/informacion-1_m.png"
+            "imagen":"img/informacion-1.png",
+            "imagen_m":"img/informacion-1_m.png"
           },
           {
             "id":2,
             "titulo":"ROTACI\u00d3N DE LOS NEUM\u00c1TICOS",
-            "imagen":"./src/assets/informacion-2.png",
-            "imagen_m":"./src/assets/informacion-2_m.png"
+            "imagen":"img/informacion-2.png",
+            "imagen_m":"img/informacion-2_m.png"
           },
           {
             "id":3,
             "titulo":"LEER LAS BANDAS DE RODADURA DE LOS NEUM\u00c1TICOS",
-            "imagen":"./src/assets/informacion-3.png",
-            "imagen_m":"./src/assets/informacion-3_m.png"
+            "imagen":"img/informacion-3.png",
+            "imagen_m":"img/informacion-3_m.png"
           },
           {
             "id":4,
             "titulo":"CU\u00c1NDO DEBO CAMBIAR LOS NEUM\u00c1TICOS",
-            "imagen":"./src/assets/informacion-4.png",
-            "imagen_m":"./src/assets/informacion-4_m.png"
+            "imagen":"img/informacion-4.png",
+            "imagen_m":"img/informacion-4_m.png"
           }
         ];
         this.loading = false;

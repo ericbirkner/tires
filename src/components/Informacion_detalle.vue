@@ -50,7 +50,7 @@
           <div class="row mt-5">
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
               <div class="thumb-neumatico">
-                <img :src="'./src/assets/'+informacion.imagen" class="img-fluid">
+                <img :src="'img/'+informacion.imagen" class="img-fluid">
               </div>
             </div>
             <div class="col">
