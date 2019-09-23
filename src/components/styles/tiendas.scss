@@ -1,0 +1,138 @@
+@import './util.scss';
+@import './mq.scss';
+:focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+    outline: 0 !important;
+  }
+.select{
+    select{
+        background: transparent;
+        color: #ffffff;
+        border:1px solid #ffffff;
+        outline:0px !important;
+    }
+    .form-control:focus{
+        background: transparent;
+        color: #ffffff;
+        border:1px solid #ffffff;
+    }
+    .form-control:disabled{
+        background: #33598b;
+        color: #ffffff;
+        border:1px solid #33598b;
+        opacity:0.65;
+        cursor: not-allowed;
+    }
+}
+.head-tiendas{
+    margin:0 0 70px 0;
+    @include respond-to($iphone_xl) {
+      margin:0 0 30px 0;
+    }
+    h2{
+      font-family: 'FuturaStd-Book';
+      font-size: 49px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #fdfdfd;
+
+      @include respond-to($iphone_xl) {
+        font-size: 30px;
+      }
+    }
+}
+.box-tiendas{
+    background: transparent;
+    margin:110px 0 0 0;
+    padding:0 10px 15px 10px;
+    @include respond-to($iphone_xl) {
+      margin:40px 0 0 0;
+    }
+    // border:1px solid red;
+    .thumb{
+        width:100%;
+        display:block;
+        padding:10px 0 5px 0;
+        margin:0;
+        .img{
+            max-width:30%;
+            display:block;
+            margin:0 auto 10px auto;
+            img{
+                width:100%;
+            }
+        }
+
+    }
+    .titulo{
+        h5{
+
+            margin:5px 0 10px 0;
+            padding:0;
+
+            font-size: 20px;
+            font-weight: 900;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: 1px;
+            text-align: center;
+            color: #fdfdfd;
+
+        }
+    }
+    .descripcion{
+        p{
+            margin:0 0 10px 0;
+            padding:0;
+
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #fdfdfd;
+        }
+    }
+    .contacto{
+
+        p{
+            @include truncate(90%);
+            margin:0 0 3px 0;
+            padding:0;
+
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: #fdfdfd;
+            a{
+                color:#ffffff;
+                text-align: center;
+            }
+        }
+    }
+}
+// .box-tiendas:hover{
+//     background: #ffffff;
+//     border-radius:4px;
+//     //overflow:hidden;
+//     @include transition(1s);
+//     .thumb{
+//         background:#4376b7;
+//     }
+//     .titulo h5,
+//     .descripcion p,
+//     .contacto p{
+//         color:#33598b;
+//     }
+// }

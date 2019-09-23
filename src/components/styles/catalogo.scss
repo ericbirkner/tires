@@ -1,0 +1,313 @@
+@import './util.scss';
+// :::::::::::::::::::: categorias :::::::::::::::::::::::
+.box-head-catalogo{
+    margin:0 0 90px 0;
+    @include respond-to($iphone_xl) {
+      margin:40px 0 0px 0;
+      .movil{
+        width:100%;
+      }
+    }
+}
+.box-menu-categorias {
+    min-width: 540px;
+    float:left;
+    @include respond-to($iphone_xl) {
+      float:none;
+    }
+    ul{
+      float:right;
+      margin:0;
+      padding:0;
+      text-align: center;
+      background: #ffffff;
+      padding:0 40px 0 40px;
+      -webkit-border-top-left-radius: 40px;
+      -moz-border-radius-topleft: 40px;
+      border-top-left-radius: 40px;
+      @include respond-to($iphone_xl) {
+        width:100%;
+        display:block;
+        float:none;
+        padding:0;
+        -webkit-border-top-left-radius: 0px;
+        -moz-border-radius-topleft: 0px;
+        border-top-left-radius: 0px;
+        margin:0 0 30px 0;
+      }
+      li{
+          display:inline-block;
+          vertical-align:top;
+          padding:5px 0 5px 0;
+          a{
+              width:100%;
+              height:100%;
+              display:block;
+              text-decoration: none;
+              p{
+                  color:#33598b;
+                  text-align:center;
+                  line-height: 1;
+                  margin:0;
+                  padding: 10px 10px 10px 10px;
+              }
+          }
+          @include respond-to($iphone_xl) {
+            display:block;
+          }
+      }
+      li:hover{
+        @include transition(.5s ease);
+        background:#33598b;
+        p{
+          color:#ffffff;
+        }
+        @include respond-to($iphone_xl) {
+          border-left:5px solid #007bff;
+        }
+      }
+  }
+}
+
+.thumb-producto{
+    max-width:70%;
+    display: block;
+    margin: 0 auto 0 auto;
+    @include respond-to($iphone_xl) {
+      max-width:100%;
+      margin: 0 auto 60px auto;
+    }
+    a{
+        text-decoration: none;
+    }
+    // border:1px solid red;
+    .head{
+        border:1px solid #ffffff;
+        border-radius:4px;
+        max-width:65%;
+        display: block;
+        margin: 0 auto 0 auto;
+        h2{
+            margin:0;
+            padding:5px 10px 5px 10px;
+            text-align: center;
+            display:block;
+            font-size: 16px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: 2.64px;
+            text-align: center;
+            color: #fdfdfd;
+            @include truncate(100%);
+
+            @include respond-to($iphone_xl) {
+              padding:10px;
+              color: #33598b;
+            }
+
+        }
+        @include respond-to($iphone_xl) {
+          background: #ffffff;
+          border:1px solid #007bff;
+        }
+    }
+    .thumb{
+        width:90%;
+        max-width:159px;
+        display: block;
+        margin:28px auto 40px auto;
+        transform: scale(0.85, 0.85);
+        -webkit-transform: scale(0.85, 0.85);
+        -moz-transform: scale(0.85, 0.85);
+        -o-transform: scale(0.85, 0.85);
+        -ms-transform: scale(0.85, 0.85);
+        img{
+            width:100%;
+        }
+    }
+    .btn-ver{
+        width:100%;
+        display:block;
+        p{
+            font-size: 22px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: 2.64px;
+            text-align: center;
+            color: #fdfdfd;
+        }
+    }
+}
+
+.thumb-producto:hover{
+    .head{
+      h2{
+          @include transition(.5s ease);
+          background: #ffffff;
+          color:#33598b;
+      }
+    }
+    .thumb{
+      @include transition(.5s ease);
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      -moz-transform: scale(1, 1);
+      -o-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+    }
+
+}
+
+
+.paginador{
+    display:block;
+    margin: 0 auto 0 auto;
+    text-align:center;
+    .prev,
+    .next{
+        width:20px;
+        position: absolute;
+        top:0;
+        a{
+            color:#ffffff;
+            padding:0;
+            text-decoration: none;
+        }
+    }
+    .next{
+        right:-20px;
+    }
+    .prev{
+        left:-20px;
+    }
+    span{
+        display: inline-block;
+        vertical-align: top;
+        padding:5px;
+        font-size:10px;
+        a{
+            color:#ffffff;
+            text-decoration: none;
+        }
+        .router-link-active{
+            .num{
+                @include scale(1.5);
+                @include transition(.5s ease);
+            }
+
+        }
+    }
+    span:hover{
+        .num{
+            @include scale(1.2);
+            @include transition(.25s ease);
+        }
+    }
+}
+
+
+
+.thumb-producto{
+  width:100%;
+  img{
+    width:100%;
+  }
+}
+.datos-productos-interior{
+  max-width:80%;
+  position: relative;
+  padding:0 0 90px 0;
+  @include respond-to($iphone_xl) {
+    max-width:100%;
+  }
+  h1{
+    font-family: 'FuturaStd-Bold';
+    font-size: 60px;
+    position: relative;
+    left: -80px;
+    @include respond-to($iphone_xl) {
+      left: auto;
+      font-size: 30px;
+      top:50px;
+    }
+  }
+  h2{
+    font-family: 'FuturaStd-Medium';
+    font-size:40px;
+  }
+  h1,h2,p{
+    color:#ffffff;
+  }
+}
+
+.btn-pdf{
+  width:auto;
+  max-width:200px;
+  height:auto;
+  border-radius: 10px;
+  background: #ffffff;
+  padding:10px 40px;
+  margin: 30px 0 0 0;
+  border:1px solid #ffffff;
+  cursor:pointer;
+  position: absolute;
+  right:0;
+  display:block;
+  @include respond-to($iphone_xl) {
+    position: relative;
+    right:auto;
+    display:block;
+    margin:30px auto;
+  }
+  a{
+    width: 100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: 'FuturaStd-Bold';
+    text-align: center;
+    color:#33598b;
+    font-size: 16px;
+  }
+}
+.btn-pdf:hover{
+  @include transition(.5s ease);
+  background: #33598b;
+  a{
+    color:#ffffff;
+  }
+}
+
+.btn-volver{
+  max-width:120px;
+  margin:0 0 0 50px;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  @include respond-to($iphone_xl) {
+    margin:0;
+  }
+  a{
+    color:#33598b;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    span{
+      position: relative;
+      top:-1px;
+    }
+  }
+}
+.btn-volver:hover{
+  @include transition(.5s ease);
+  background: #33598b;
+  a{
+    color:#ffffff;
+  }
+}
