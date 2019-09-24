@@ -16,16 +16,16 @@
             <div class="col">
               <div class="interior">
                 <div class="wrapper">
-                  <div class="icono">
+                  <div class="icono" ref="box1">
                     <img src="./../assets/icono-rueda.png" class="img-fluid">
                   </div>
-                  <div class="titulo">
+                  <div class="titulo" ref="box2">
                     <h4>
                       PRESIÓN CORRECTA DE LOS NEUMÁTICOS
                     </h4>
                   </div>
-                  <div class="linea-dash"></div>
-                  <div class="body-copy">
+                  <div class="linea-dash" ref="box3"></div>
+                  <div class="body-copy" ref="box4">
                     <P>
                       Mantener el nivel recomendado de presión de aire en los neumáticos amplía su vida útil y
                       garantiza una maniobrabilidad, un frenado y un ahorro de combustible óptimos.
@@ -48,13 +48,13 @@
             </div>
           </div>
           <div class="row mt-5">
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" ref="box5">
               <div class="thumb-neumatico">
                 <img :src="'img/'+informacion.imagen" class="img-fluid">
               </div>
             </div>
             <div class="col">
-              <div class="box-datos-interior">
+              <div class="box-datos-interior" ref="box6">
                 <div class="wrapper">
                   <div v-html="informacion.cuerpo"></div>
                 </div>
@@ -72,7 +72,8 @@
 </template>
 
 <script>
-
+  import { TweenMax } from 'gsap';
+  import { fxPgIn, fxPgOut } from '../helpers/Devfun';
 export default {
     name: "Informacion_detalle",
 
@@ -92,10 +93,14 @@ export default {
         this.loading = false;
       },
       enterAnim(done){
-        TweenMax.to(this.$el, 2, { opacity: 1, onComplete: done});
+        // entra
+        const ArrChild = [ this.$refs.box1, this.$refs.box2, this.$refs.box3, this.$refs.box4, this.$refs.box5, this.$refs.box6 ];
+        fxPgIn(this.$el, ArrChild, done);
       },
       leaveAnim(done){
-        TweenMax.to(this.$el, 0.2, { opacity: 0, onComplete: done});
+        // sale
+        const ArrChild = [ this.$refs.box1, this.$refs.box2, this.$refs.box3, this.$refs.box4, this.$refs.box5, this.$refs.box6 ];
+        fxPgOut(this.$el, ArrChild, done);
       }
     },
     computed: {

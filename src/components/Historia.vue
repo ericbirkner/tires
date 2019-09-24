@@ -166,7 +166,7 @@ export default {
       },
       enterAnim(done){
         // entra
-        fxPgInSingle(this.$el, this.$refs.thumb, done);
+        fxPgInSingle(this.$el, done);
       },
       leaveAnim(done){
         // sale

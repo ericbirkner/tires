@@ -36,7 +36,7 @@
               </div>
             </div>
             <div class="btn-enviar" ref="campo5">
-              <input type="submit" value="Submit">
+              <input type="submit" value="Enviar">
             </div>
             <p>&nbsp;</p>
           </form>

@@ -85,3 +85,11 @@ body{
   }
 }
 
+
+.router-link-exact-active{
+  @include transition(.5s ease);
+  background:#33598b;
+  p{
+    color:#ffffff !important;
+  }
+}

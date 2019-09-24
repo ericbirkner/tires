@@ -80,9 +80,7 @@
           } else if( menuToggle ) {
             tl.reverse();
             menuToggle = false;
-
           }
-
         }
       }
   }
