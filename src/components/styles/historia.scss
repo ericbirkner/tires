@@ -67,7 +67,7 @@
               text-align: left;
               color: #ffffff;
               @include respond-to($iphone_xl) {
-                font-size: 20px;
+                font-size: 40px;
                 text-align: center;
                 margin:0;
                 padding:0;
@@ -84,7 +84,7 @@
                 text-align: right;
                 color: #ffffff;
                 @include respond-to($iphone_xl) {
-                  font-size: 14px;
+                  font-size: 16px;
                   text-align: center;
                 }
             }
@@ -98,7 +98,7 @@
                 text-align: right;
                 color: #ffffff;
                 @include respond-to($iphone_xl) {
-                  font-size: 10px;
+                  font-size: 14px;
                   text-align: center;
                 }
             }

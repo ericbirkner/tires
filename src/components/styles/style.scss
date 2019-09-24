@@ -67,6 +67,9 @@ body{
 
 .swiper-container-autoheight, .swiper-container-autoheight .swiper-slide{
   height:auto !important;
+  @include respond-to($iphone_xl) {
+    height:100vh !important;
+  }
 }
 
 
