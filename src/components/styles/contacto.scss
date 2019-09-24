@@ -33,8 +33,8 @@
     @include placeholder(#5f646b);
     .mensaje-valid{
       min-height:30px;
-      p{
-        font-family: 'FuturaStd-Light';
+      font-family: 'FuturaStd-Light';
+      p{        
         margin:0;
         padding:4px 10px;
         color: #ff4747;
@@ -62,4 +62,3 @@
     }
   }
 }
-

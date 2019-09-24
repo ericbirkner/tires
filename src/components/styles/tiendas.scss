@@ -62,6 +62,9 @@
             max-width:30%;
             display:block;
             margin:0 auto 10px auto;
+            @include respond-to($iphone_xl) {
+              max-width:60px;
+            }
             img{
                 width:100%;
             }
@@ -115,6 +118,9 @@
             letter-spacing: normal;
             text-align: center;
             color: #fdfdfd;
+            @include respond-to($iphone_xl) {
+              @include truncate(100%);
+            }
             a{
                 color:#ffffff;
                 text-align: center;

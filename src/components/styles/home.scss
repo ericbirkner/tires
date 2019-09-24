@@ -74,6 +74,10 @@
         img{
           width:100%;
         }
+        @include respond-to($iphone_xl) {
+          width:35px;
+          height:35px;
+        }
       }
     }
   }

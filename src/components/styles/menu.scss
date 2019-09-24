@@ -70,6 +70,9 @@
         .nav{
             display:block;
             min-width:850px;
+            @include respond-to($iphone_xl) {
+              min-width:100%;
+            }
             ul{
                 float:right;
                 margin:0;
@@ -93,7 +96,7 @@
                     display:inline-block;
                     vertical-align:top;
                     @include respond-to($iphone_xl) {
-                      width:100%;
+                      width:90%;
                       display:block;
                       margin:20px 0 20px 0;
                     }

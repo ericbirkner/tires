@@ -14,7 +14,7 @@
             <div class="row">
 
               <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 thumb-slide web">
-                <img :src="'./src/assets/'+historia.imagen" class="img-fluid"/>
+                <img :src="historia.imagen" class="img-fluid"/>
               </div>
 
               <div class="col">
@@ -32,14 +32,14 @@
               <div class="col box-descripcion">
                 <div class="datos-historia">
                   <vue-scrollbar classes="scrollMask" ref="Scrollbar">
-                    <p>
-                      {{historia.descripcion}}
+                    <p v-html="historia.descripcion">
+
                     </p>
                   </vue-scrollbar>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 thumb-slide movil">
-                <img :src="'./src/assets/'+historia.imagen" class="img-fluid"/>
+                <img :src="'img/'+historia.imagen" class="img-fluid"/>
               </div>
             </div>
           </swiper-slide>
@@ -79,19 +79,6 @@
   </div>
 
 
-
-
-
-  <!-- <div class="col-6" >
-    <img :src="historia.imagen" class="img-fluid"/>
-  </div>
-
-  <div class="col-6">
-    <h3>{{historia.ano}}</h3>
-    <h6>{{historia.titulo}}</h6>
-    <p v-html="historia.descripcion"></p>
-  </div> -->
-
 </div>
 </div>
 
@@ -114,35 +101,7 @@ export default {
     data() {
         return {
           ano_selected:'',
-          historias:[
-            {
-              "id":0,
-              "titulo":"otro a\u00f1o mas antiguo",
-              "ano":"1865",
-              "descripcion":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-              "imagen":"slide-1.png"
-            },{
-              "id":1,
-              "titulo":"otro a\u00f1o mas antiguo",
-              "ano":"1909",
-              "descripcion":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-              "imagen":"slide-1.png"
-            },
-            {
-              "id":2,
-              "titulo":"otro a\u00f1o mas antiguo",
-              "ano":"2000",
-              "descripcion":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-              "imagen":"slide-1.png"
-            },
-            {
-              "id":3,
-              "titulo":"otro a\u00f1o mas antiguo",
-              "ano":"2019",
-              "descripcion":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-              "imagen":"slide-1.png"
-            },
-          ],
+          historias:[],
           swiperOption: {
             direction: 'vertical',
             autoHeight: true,
@@ -179,7 +138,7 @@ export default {
       },
       enterAnim(done){
         // entra
-        fxPgInSingle(this.$el, this.$refs.thumb, done);
+        fxPgInSingle(this.$el, done);
       },
       leaveAnim(done){
         // sale
@@ -197,10 +156,17 @@ export default {
       }
     },
     created: function() {
-      console.log('created', this.historias);
-      this.historias.forEach(element => {
-        anos.push(element.ano);
+      axios.get(URL+'historias')
+      .then(response => {
+          this.historias = response.data;
+          this.historias.forEach(element => {
+            anos.push(element.ano);
+          });
+      })
+      .catch(response => {
+          console.log(response);
       });
+
       // console.log('created', anos);
     },
     mounted() {

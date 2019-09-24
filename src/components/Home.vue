@@ -8,13 +8,13 @@
               <div class="thumb-img">
 
                 <!-- version web -->
-                <img class="web" :src="'./src/assets/' + categoria.thumb" />
+                <img class="web" :src="categoria.imagen" />
 
                 <!-- version movil -->
-                <img class="movil" :src="'./src/assets/' + categoria.thumb_m" />
+                <img class="movil" :src="categoria.imagen_m" />
 
                 <div class="over-thumb">
-                  <div class="plus"><img src="./../assets/plus.png" /></div>
+                  <div class="plus"><img src="img/plus.png" /></div>
                 </div>
               </div>
               <div class="nombre-categoria">
@@ -42,12 +42,7 @@
       name: "Home",
       data() {
           return {
-            categorias:[
-              {"id":1,"deleted_at":null,"created_at":"2019-06-25 16:47:02","updated_at":"2019-06-25 16:47:02","nombre":"PASAJERO","thumb":"pasajeros.png","thumb_m":"pasajeros_m.png"},
-              {"id":2,"deleted_at":null,"created_at":"2019-06-25 16:47:17","updated_at":"2019-06-25 16:47:17","nombre":"SUV 4WD","thumb":"suv.png","thumb_m":"suv_m.png"},
-              {"id":3,"deleted_at":null,"created_at":"2019-06-25 16:47:29","updated_at":"2019-06-25 16:47:29","nombre":"CAMI\u00d3N Y BUS","thumb":"camion.png","thumb_m":"camion_m.png"},
-              {"id":4,"deleted_at":null,"created_at":"2019-06-25 16:47:41","updated_at":"2019-06-25 16:47:41","nombre":"CARGA LIGERA","thumb":"camion-ligero.png","thumb_m":"camion-ligero_m.png"}
-            ]
+            categorias:[]
           }
       },
       methods: {
@@ -67,7 +62,14 @@
         console.log('mounted');
       },
       created: function() {
-        console.log(this.categorias);
+        axios.get(URL+'categoria-productos')
+        .then(response => {
+            this.categorias = response.data;
+        })
+        .catch(response => {
+            console.log(response);
+        });
+
       }
   }
 </script>

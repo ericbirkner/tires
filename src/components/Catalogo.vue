@@ -19,10 +19,10 @@
           <div class="thumb-producto">
             <router-link :to="`/producto/${Producto.id}`">
               <div class="head">
-                <h2 class="capitalize" :data-cat="Producto.categoria_id">{{Producto.nombre}}</h2>
+                <h2 class="capitalize" :title="Producto.nombre" :data-cat="Producto.categoria_id">{{Producto.nombre}}</h2>
               </div>
               <div class="thumb">
-                <img :src="'./src/assets/'+Producto.imagen" width="100">
+                <img :src="Producto.imagen" width="100">
               </div>
               <div class="btn-ver">
                 <p>
@@ -80,7 +80,6 @@ export default {
         return {
           loading:true,
           productos: [],
-          baseUrl: 'https://jsonplaceholder.typicode.com/',
           page: 1,
           perPage: 12,
           pages: [],
@@ -91,8 +90,8 @@ export default {
     },
     methods: {
         getProductos () {
-            /*
-            axios.get(this.baseUrl+'productos')
+
+            axios.get(URL+'productos')
             .then(response => {
                 this.productos = response.data;
                 this.loading = false;
@@ -100,7 +99,7 @@ export default {
             .catch(response => {
                 console.log(response);
             });
-            */
+          /*
             this.productos= [
               {"id":13,"nombre":"3. AS P01","categoria_id":2,"imagen":"neumatico.png"},
               {"id":2,"nombre":"Encounter AT Angle","categoria_id":1,"imagen":"neumatico.png"},
@@ -131,6 +130,7 @@ export default {
               {"id":29,"nombre":"ST791","categoria_id":3,"imagen":"neumatico.png"},
               {"id":28,"nombre":"ST900","categoria_id":3,"imagen":"neumatico.png"},
               {"id":22,"nombre":"ST908","categoria_id":3,"imagen":"neumatico.png"}];
+              */
             this.loading = false;
             console.log(this.productos);
         },

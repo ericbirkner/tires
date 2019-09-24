@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="btn-volver">
         <router-link :to="`/catalogo`">
-          <span> < </span> VOLVER
+          <span> &lt; </span> VOLVER
         </router-link>
       </div>
       <!-- <div v-if="loading" class="row text-center">
@@ -16,7 +16,7 @@
           <div class="row">
             <div class="col">
               <div class="thumb-producto">
-                <img :src="'./src/assets/'+producto.imagen" class="img-fluid">
+                <img :src="producto.imagen" class="img-fluid">
               </div>
             </div>
             <div class="col movil">
@@ -32,8 +32,9 @@
             <h1 class="web">{{producto.nombre}}</h1>
             <h2>{{producto.subTitulo}}</h2>
             <p v-html="producto.descripcion"></p>
-            <div class="btn-pdf">
-              <a href="javascript:void(0);">
+
+            <div class="btn-pdf" v-if="producto.pdf">
+              <a :href="producto.pdf" target="_blank">
                 VER PDF
               </a>
             </div>
@@ -69,15 +70,15 @@ export default {
       }
     },
     created: function() {
-      /*
+
       var not_id = this.$route.params.id
       axios
-        .get("http://jsonplaceholder.typicode.com/posts/"+not_id)
+        .get(URL+"producto/"+not_id)
         .then(res => {
           this.producto = res.data;
           this.loading = false;
         })
-      */
+      /*
       this.producto = {
         "id":13,
         "nombre":"3. AS P01",
@@ -85,8 +86,8 @@ export default {
         "descripcion":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><\/p>",
         "pdf":0,
         "imagen":"neumatico.png"
-      };
-      this.loading=false;
+      };*/
+    
     }
 }
 </script>

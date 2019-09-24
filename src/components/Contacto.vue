@@ -17,7 +17,7 @@
                 </div>
               </div >
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ref="campo2">
-                <input id="email" v-model="email" type="text" name="email" placeholder="EMAIL (*)">
+                <input id="email" v-model="email" type="text" name="email" placeholder="EMAIL (*)" required>
                 <div class="mensaje-valid">
                   <p v-show="validEmail">**El email es obligatorio.</p>
                 </div>
@@ -29,15 +29,16 @@
                 </div>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ref="campo4">
-                <textarea v-model="consulta" name="consulta" placeholder="Consulta (*)" rows="10" cols="50">Write something here</textarea>
+                <textarea v-model="consulta" name="consulta" placeholder="Consulta (*)" rows="10" cols="50"></textarea>
                 <div class="mensaje-valid">
                   <p v-show="validConsulta">**La consulta es obligatorio.</p>
                 </div>
               </div>
             </div>
             <div class="btn-enviar" ref="campo5">
-              <input type="submit" value="Submit">
+              <input type="submit" value="Enviar">
             </div>
+            <p class="mensaje-valid" v-show="enviado">{{mensaje}}</p>
             <p>&nbsp;</p>
           </form>
         </div>
@@ -50,6 +51,7 @@
 <script>
   import { TweenMax } from 'gsap';
   import { fxPgIn, fxPgOut } from '../helpers/Devfun';
+  import axios from 'axios';
 export default {
     name: "contacto",
     data() {
@@ -62,7 +64,9 @@ export default {
           nombre: null,
           email: null,
           telefono: null,
-          consulta: null
+          consulta: null,
+          enviado:false,
+          mensaje:null
         }
     },
     methods: {
@@ -99,17 +103,41 @@ export default {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
       },
-      getDataForm: function(){
+      getDataForm: function(e){
+        this.mensaje="";
+        this.enviado=false;
         console.log('POST => al servicio de contacto');
         console.log('this.nombre', this.nombre);
         console.log('this.email', this.email);
         console.log('this.telefono', this.telefono);
         console.log('this.consulta', this.consulta);
 
-        this.validNombre = false;
-        this.validEmail = false;
-        this.validTelefono = false;
-        this.validConsulta = false;
+        axios.post(URL+'contacto', {
+          nombre: this.nombre,
+          email: this.email,
+          telefono: this.telefono,
+          consulta: this.consulta
+        }).then(response => {
+          console.log(response);
+          this.enviado = true;
+          this.mensaje = response.data.mensaje;
+
+
+          this.validNombre = false;
+          this.validEmail = false;
+          this.validTelefono = false;
+          this.validConsulta = false;
+
+          document.getElementById('contacto').reset();
+
+        })
+        .catch(response => {
+            console.log(response);
+            this.enviado=true;
+            this.mensaje = response;
+        });
+
+
       },
       enterAnim(done){
         // entra

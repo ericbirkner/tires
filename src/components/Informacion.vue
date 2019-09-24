@@ -12,6 +12,7 @@
         </div>
       </div> -->
 
+        <template v-if="loading">
 
         <div class="thumb-info col-sm-3 col-sm-3" ref="thumb1">
           <router-link :to="`/informacion/${informaciones[0].id}`">
@@ -77,7 +78,7 @@
         </div>
 
 
-
+      </template>
 
     </div>
   </div>
@@ -88,43 +89,27 @@
 <script>
   import { TweenMax } from 'gsap';
   import { fxPgIn, fxPgOut } from '../helpers/Devfun';
-
+  import axios from 'axios';
 export default {
     name: "Informacion",
 
     data() {
         return {
-
+          informaciones: [],
+          loading:false
         }
     },
     methods: {
       getData () {
-        this.informaciones= [
-          {
-            "id":1,
-            "titulo":"PRESI\u00d3N CORRECTA DE LOS NEUM\u00c1TICOS",
-            "imagen":"./src/assets/informacion-1.png",
-            "imagen_m":"./src/assets/informacion-1_m.png"
-          },
-          {
-            "id":2,
-            "titulo":"ROTACI\u00d3N DE LOS NEUM\u00c1TICOS",
-            "imagen":"./src/assets/informacion-2.png",
-            "imagen_m":"./src/assets/informacion-2_m.png"
-          },
-          {
-            "id":3,
-            "titulo":"LEER LAS BANDAS DE RODADURA DE LOS NEUM\u00c1TICOS",
-            "imagen":"./src/assets/informacion-3.png",
-            "imagen_m":"./src/assets/informacion-3_m.png"
-          },
-          {
-            "id":4,
-            "titulo":"CU\u00c1NDO DEBO CAMBIAR LOS NEUM\u00c1TICOS",
-            "imagen":"./src/assets/informacion-4.png",
-            "imagen_m":"./src/assets/informacion-4_m.png"
-          }
-        ];
+        axios.get(URL+'informacion')
+        .then(response => {
+            this.informaciones = response.data;
+            this.loading=true;
+        })
+        .catch(response => {
+            console.log(response);
+        });
+
         this.loading = false;
         console.log(this.informaciones);
       },

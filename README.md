@@ -1,8 +1,29 @@
-# tires
- front end tires
+# sumitomo-tires
 
- -la típica: npm install
+## Project setup
+```
+npm install
+```
 
- -para correr: npm run dev
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
- -exportar: npm run build
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

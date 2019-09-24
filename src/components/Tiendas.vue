@@ -34,13 +34,13 @@
             </p>
           </div>
           <div class="contacto">
-            <a :href="'tienda.email'">
+            <a :href="`mailto:${tienda.email}`">
               <p>
                 {{tienda.email}}
               </p>
             </a>
             <p>
-              <a :href="''">
+              <a :href="tienda.web" target="_blank">
                 {{tienda.web}}
               </a>
             </p>

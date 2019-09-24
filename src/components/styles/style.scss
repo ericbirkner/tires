@@ -67,6 +67,9 @@ body{
 
 .swiper-container-autoheight, .swiper-container-autoheight .swiper-slide{
   height:auto !important;
+  @include respond-to($iphone_xl) {
+    height:100vh !important;
+  }
 }
 
 
@@ -85,3 +88,11 @@ body{
   }
 }
 
+
+.router-link-exact-active{
+  @include transition(.5s ease);
+  background:#33598b;
+  p{
+    color:#ffffff !important;
+  }
+}
