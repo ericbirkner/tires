@@ -46,7 +46,7 @@
                   <router-link to="/contacto"><p>CONTACTO</p></router-link>
                 </li>
                 <li>
-                  <a href="javascript:void(0);"><p>GARANTIA</p></a>
+                  <a href="/ruta-al-pdf" target="_blank"><p>GARANTIA</p></a>
                 </li>
               </ul>
             </div>
