@@ -14,12 +14,12 @@
       </div>
     </div>
     </div>
-    <div class="row" v-else>
+    <div class="row pt-5" v-else>
       <div class="col-xs-6 col-sm-4 col-lg-2 col-xl-2" v-for="tienda in displayedTiendas">
         <div class="box-tiendas">
           <div class="thumb">
             <div class="img">
-              <img src="../assets/tienda.png" />
+              <img src="img/tienda.png" />
             </div>
           </div>
           <div class="titulo">
@@ -71,17 +71,17 @@ export default {
     },
     methods: {
       getTiendas () {
-          /*
-          axios.get(this.baseUrl+'productos')
+
+          axios.get(URL+'tiendas')
           .then(response => {
-              this.productos = response.data;
+              this.tiendas = response.data;
               this.loading = false;
           })
           .catch(response => {
               console.log(response);
           });
-          */
-          this.tiendas= [{"id":1,"deleted_at":null,"created_at":"2019-08-23 16:00:30","updated_at":"2019-08-23 16:11:17","nombre":"tienda demo","direccion":"AVDA LAS CONDES N\u00b010161","telefono":"3333444343","email":"email@fake.com","web":"http:\/\/www.llantax.com","paises_id":1,"ciudades_id":2},{"id":2,"deleted_at":null,"created_at":"2019-08-23 16:18:14","updated_at":"2019-08-23 16:18:14","nombre":"Otra tienda","direccion":"JR  UNION N\u00e7 113 - TRUJILLO TRUJILLO  LA LIBERTAD","telefono":"3333444343","email":"dev@simplechile.com","web":"http:\/\/www.llantasdelpacifico.cl","paises_id":1,"ciudades_id":1},{"id":3,"deleted_at":null,"created_at":"2019-08-29 14:18:28","updated_at":"2019-08-29 14:18:28","nombre":"Tienda argentina","direccion":"AV CHE 1233","telefono":"34943843943","email":"argento@ksdksd.cl","web":"http:\/\/www.avenida.com.ar","paises_id":2,"ciudades_id":3}];
+
+
           this.loading = false;
           //console.log(tiendas);
       },

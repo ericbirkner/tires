@@ -11,7 +11,7 @@
           </option>
         </select>
       </div>
-      
+
 
     </div>
     <div class="col col-lg-4">
@@ -23,7 +23,7 @@
           </option>
         </select>
       </div>
-      
+
 
     </div>
   </div>
@@ -48,18 +48,23 @@ export default {
     },
     methods: {
       getPaises () {
-          this.paises= [
-            {"id":2,"deleted_at":null,"created_at":"2019-08-28 21:41:51","updated_at":"2019-08-28 21:41:51","pais":"argentina"},
-            {"id":1,"deleted_at":null,"created_at":"2019-08-23 15:46:47","updated_at":"2019-08-23 15:46:47","pais":"chile"}
-            ]
+            axios.get(URL+'paises')
+            .then(response => {
+                this.paises = response.data;
+            })
+            .catch(response => {
+                console.log(response);
+            });
           //console.log(paises);
       },
       getCiudades () {
-          this.ciudades= [
-            {"id":3,"deleted_at":null,"created_at":"2019-08-28 21:44:43","updated_at":"2019-08-28 21:44:43","ciudad":"Buenos aires","paises_id":2},
-            {"id":1,"deleted_at":null,"created_at":"2019-08-23 15:50:05","updated_at":"2019-08-23 15:50:05","ciudad":"Regi\u00f3n Metropolitana","paises_id":1},
-            {"id":2,"deleted_at":null,"created_at":"2019-08-23 16:09:39","updated_at":"2019-08-23 16:09:39","ciudad":"Vi\u00f1a del mar","paises_id":1}
-            ];
+            axios.get(URL+'ciudades')
+            .then(response => {
+                this.ciudades = response.data;
+            })
+            .catch(response => {
+                console.log(response);
+            });
       },
       selectHandler(event){
         console.log(event.target.value)
