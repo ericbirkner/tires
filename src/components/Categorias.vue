@@ -21,12 +21,7 @@ export default {
     name: "Categorias",
     data() {
         return {
-          categorias:[
-            {"id":1,"deleted_at":null,"created_at":"2019-06-25 16:47:02","updated_at":"2019-06-25 16:47:02","nombre":"SUV 4WD"},
-            {"id":2,"deleted_at":null,"created_at":"2019-06-25 16:47:17","updated_at":"2019-06-25 16:47:17","nombre":"PASAJERO"},
-            {"id":3,"deleted_at":null,"created_at":"2019-06-25 16:47:29","updated_at":"2019-06-25 16:47:29","nombre":"CAMI\u00d3N Y BUS"},
-            {"id":4,"deleted_at":null,"created_at":"2019-06-25 16:47:41","updated_at":"2019-06-25 16:47:41","nombre":"CARGA LIGERA"}
-          ]
+          categorias:[]
         }
     },
     methods: {
@@ -37,7 +32,13 @@ export default {
     },
 
     created: function() {
-      console.log(this.categorias);
+      axios.get(URL+'categoria-productos')
+      .then(response => {
+          this.categorias = response.data;
+      })
+      .catch(response => {
+          console.log(response);
+      });
     }
 }
 </script>

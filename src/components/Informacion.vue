@@ -18,12 +18,12 @@
           <router-link :to="`/informacion/${informaciones[0].id}`">
             <div class="bg_thumb thumb-xl web" v-bind:style="{ 'background-image': 'url(' + informaciones[0].imagen + ')' }">
               <div class="over-thumb">
-                <div class="plus"><img src="./../assets/plus.png" /></div>
+                <div class="plus"><img src="img/plus.png" /></div>
               </div>
             </div>
             <div class="bg_thumb thumb-xl movil" v-bind:style="{ 'background-image': 'url(' + informaciones[0].imagen_m + ')' }">
               <div class="over-thumb">
-                <div class="plus"><img src="./../assets/plus.png" /></div>
+                <div class="plus"><img src="img/assets/plus.png" /></div>
               </div>
             </div>
           </router-link>
@@ -38,7 +38,7 @@
               <router-link :to="`/informacion/${informaciones[1].id}`">
                 <div class="bg_thumb thumb-xs" v-bind:style="{ 'background-image': 'url(' + informaciones[1].imagen + ')' }">
                   <div class="over-thumb">
-                    <div class="plus"><img src="./../assets/plus.png" /></div>
+                    <div class="plus"><img src="img/plus.png" /></div>
                   </div>
                 </div>
               </router-link>
@@ -52,7 +52,7 @@
               <router-link :to="`/informacion/${informaciones[2].id}`">
                 <div class="bg_thumb thumb-xs" v-bind:style="{ 'background-image': 'url(' + informaciones[2].imagen + ')' }">
                   <div class="over-thumb">
-                    <div class="plus"><img src="./../assets/plus.png" /></div>
+                    <div class="plus"><img src="img/plus.png" /></div>
                   </div>
                 </div>
               </router-link>
@@ -67,7 +67,7 @@
           <router-link :to="`/informacion/${informaciones[3].id}`">
             <div class="bg_thumb thumb-xl" v-bind:style="{ 'background-image': 'url(' + informaciones[3].imagen + ')' }">
               <div class="over-thumb">
-                <div class="plus"><img src="./../assets/plus.png" /></div>
+                <div class="plus"><img src="img/plus.png" /></div>
               </div>
             </div>
           </router-link>

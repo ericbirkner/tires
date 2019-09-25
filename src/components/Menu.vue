@@ -8,8 +8,8 @@
             <div class="bg-menu-m">
               <div class="logo-menu">
                 <router-link to="/">
-                  <img class="web" src="../assets/logo-sumitomo.png" />
-                  <img class="movil" src="../assets/logo-sumitomo_m.png" />
+                  <img class="web" src="img/logo-sumitomo.png" />
+                  <img class="movil" src="img/logo-sumitomo_m.png" />
                 </router-link>
               </div>
               <div class="btn-menu-m" v-on:click="menuToggle">
@@ -46,7 +46,7 @@
                   <router-link to="/contacto"><p>CONTACTO</p></router-link>
                 </li>
                 <li>
-                  <a href="/ruta-al-pdf" target="_blank"><p>GARANTIA</p></a>
+                  <a href="POLIZA-DE-GARANTIA-2019.pdf" target="_blank"><p>GARANTIA</p></a>
                 </li>
               </ul>
             </div>
