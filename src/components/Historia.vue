@@ -39,7 +39,7 @@
                 </div>
               </div>
               <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 thumb-slide movil">
-                <img :src="'img/'+historia.imagen" class="img-fluid"/>
+                <img :src="historia.imagen" class="img-fluid"/>
               </div>
             </div>
           </swiper-slide>

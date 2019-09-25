@@ -23,7 +23,7 @@
             </div>
             <div class="bg_thumb thumb-xl movil" v-bind:style="{ 'background-image': 'url(' + informaciones[0].imagen_m + ')' }">
               <div class="over-thumb">
-                <div class="plus"><img src="img/assets/plus.png" /></div>
+                <div class="plus"><img src="img/plus.png" /></div>
               </div>
             </div>
           </router-link>
