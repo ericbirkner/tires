@@ -51,13 +51,13 @@ $height: 600px;
     opacity:0;
     border:1px solid rgba(255,255,255,0);
     .plus{
-      width:70px;
-      height:70px;
+      width:50px;
+      height:50px;
       display:block;
       position: absolute;
       top:50%;
       left:50%;
-      margin:-35px 0 0 -35px;
+      margin:-25px 0 0 -25px;
       img{
         width:100%;
       }
@@ -76,13 +76,11 @@ $height: 600px;
     opacity:1;
     background:rgba(0,0,0,0.65);
     @include transition(.5s ease);
-    border:1px solid rgba(255,255,255,1);
-
   }
 }
 .thumb-info {
     h4{
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       font-style: normal;
       font-stretch: normal;
@@ -90,7 +88,7 @@ $height: 600px;
       letter-spacing: -0.13px;
       text-align: left;
       color: #ffffff;
-      margin:2px 0 10px 0;
+      margin:4px 0 10px 0;
     }
 
     .no-gutter{
@@ -122,7 +120,7 @@ $height: 600px;
         @include respond-to($iphone_xl) {
           max-width:95%;
         }
-        h1,h3,p{
+        h1,h3,h4,h5,p{
             color:#ffffff;
             text-align: left;
             margin: 0;
@@ -138,6 +136,18 @@ $height: 600px;
           @include respond-to($iphone_xl) {
             font-size:20px;
             left:0px;
+          }
+        }
+        h5{
+          font-size:30px;
+          font-family: 'FuturaStd-Bold';
+          margin:0 0 20px 0;
+          display: block;
+          position: relative;
+          @include respond-to($iphone_xl) {
+            font-size:18px;
+            left:0px;
+            margin-top: 20px;
           }
         }
         ul,ol{

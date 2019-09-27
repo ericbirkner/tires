@@ -50,7 +50,7 @@
             }
         }
         .datos-historia {
-            // border:1px solid red;
+            text-align: right;
             @include respond-to($iphone_xl) {
               max-width:100%;
               display:block;
@@ -58,13 +58,13 @@
             }
             h2{
               font-family: 'FuturaStd-Bold';
-              font-size: 97.5px;
+              font-size: 5rem;
               font-weight: bold;
               font-style: normal;
               font-stretch: normal;
               line-height: normal;
-              letter-spacing: 11.7px;
-              text-align: left;
+              letter-spacing: 8px;
+              text-align: right;
               color: #ffffff;
               @include respond-to($iphone_xl) {
                 font-size: 40px;
@@ -75,7 +75,7 @@
             }
             h4{
                 font-family: 'FuturaStd-Bold';
-                font-size: 37px;
+                font-size: rem;
                 font-weight: bold;
                 font-style: normal;
                 font-stretch: normal;

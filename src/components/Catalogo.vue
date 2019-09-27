@@ -99,38 +99,7 @@ export default {
             .catch(response => {
                 console.log(response);
             });
-          /*
-            this.productos= [
-              {"id":13,"nombre":"3. AS P01","categoria_id":2,"imagen":"neumatico.png"},
-              {"id":2,"nombre":"Encounter AT Angle","categoria_id":1,"imagen":"neumatico.png"},
-              {"id":1,"nombre":"ENCOUNTER HT","categoria_id":1,"imagen":"neumatico.png"},
-              {"id":12,"nombre":"HTR 900","categoria_id":2,"imagen":"neumatico.png"},
-              {"id":3,"nombre":"HTR SP HP","categoria_id":1,"imagen":"neumatico.png"},
-              {"id":15,"nombre":"HTR T4","categoria_id":2,"imagen":"neumatico.png"},
-              {"id":14,"nombre":"HTR200","categoria_id":2,"imagen":"neumatico.png"},
-              {"id":16,"nombre":"HTR2000","categoria_id":2,"imagen":"neumatico.png"},
-              {"id":11,"nombre":"HTRZ3","categoria_id":2,"imagen":"neumatico.png"},
-              {"id":7,"nombre":"SL717","categoria_id":4,"imagen":"neumatico.png"},
-              {"id":8,"nombre":"SL725","categoria_id":4,"imagen":"neumatico.png"},
-              {"id":9,"nombre":"SL726","categoria_id":4,"imagen":"neumatico.png"},
-              {"id":10,"nombre":"SL825","categoria_id":4,"imagen":"neumatico.png"},
-              {"id":4,"nombre":"SL830","categoria_id":1,"imagen":"neumatico.png"},
-              {"id":5,"nombre":"SL840","categoria_id":1,"imagen":"neumatico.png"},
-              {"id":6,"nombre":"SL850","categoria_id":1,"imagen":"neumatico.png"},
-              {"id":25,"nombre":"ST506","categoria_id":3,"imagen":"neumatico.png"},
-              {"id":24,"nombre":"ST508","categoria_id":3,"imagen":"neumatico.png"},
-              {"id":23,"nombre":"ST518","categoria_id":3,"imagen":"neumatico.png"},
-              {"id":27,"nombre":"ST636A","categoria_id":3,"imagen":"neumatico.png"},
-              {"id":19,"nombre":"ST709 2R","categoria_id":3,"imagen":"neumatico.png"},
-              {"id":17,"nombre":"ST718","categoria_id":3,"imagen":"neumatico.png"},
-              {"id":26,"nombre":"ST720","categoria_id":3,"imagen":"neumatico.png"},
-              {"id":20,"nombre":"ST727","categoria_id":3,"imagen":"neumatico.png"},
-              {"id":18,"nombre":"ST738","categoria_id":3,"imagen":"neumatico.png"},
-              {"id":21,"nombre":"ST770","categoria_id":3,"imagen":"neumatico.png"},
-              {"id":29,"nombre":"ST791","categoria_id":3,"imagen":"neumatico.png"},
-              {"id":28,"nombre":"ST900","categoria_id":3,"imagen":"neumatico.png"},
-              {"id":22,"nombre":"ST908","categoria_id":3,"imagen":"neumatico.png"}];
-              */
+          
             this.loading = false;
             console.log(this.productos);
         },

@@ -28,22 +28,22 @@
             <div class="nav">
               <ul>
                 <li>
-                  <router-link to="/"><p>HOME</p></router-link>
+                  <router-link to="/" v-on:click.native="menuToggle"><p>HOME</p></router-link>
                 </li>
                 <li>
-                  <router-link to="/catalogo"><p>CATÁLOGO</p></router-link>
+                  <router-link to="/catalogo" v-on:click.native="menuToggle"><p>CATÁLOGO</p></router-link>
                 </li>
                 <li>
-                  <router-link to="/historia"><p>HISTORIA</p></router-link>
+                  <router-link to="/historia" v-on:click.native="menuToggle"><p>HISTORIA</p></router-link>
                 </li>
                 <li>
-                  <router-link to="/informacion"><p>CUIDADO DEL NEUMATICO</p></router-link>
+                  <router-link to="/informacion" v-on:click.native="menuToggle"><p>CUIDADO DEL NEUMATICO</p></router-link>
                 </li>
                 <li>
-                  <router-link to="/tiendas"><p>DISTRIBUIDORES</p></router-link>
+                  <router-link to="/tiendas" v-on:click.native="menuToggle"><p>DISTRIBUIDORES</p></router-link>
                 </li>
                 <li>
-                  <router-link to="/contacto"><p>CONTACTO</p></router-link>
+                  <router-link to="/contacto" v-on:click.native="menuToggle"><p>CONTACTO</p></router-link>
                 </li>
                 <li>
                   <a href="POLIZA-DE-GARANTIA-2019.pdf" target="_blank"><p>GARANTIA</p></a>

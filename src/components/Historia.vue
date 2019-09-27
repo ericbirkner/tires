@@ -17,7 +17,7 @@
                 <img :src="historia.imagen" class="img-fluid"/>
               </div>
 
-              <div class="col">
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="datos-historia">
                   <h2>
                     {{historia.ano}}
@@ -38,7 +38,7 @@
                   </vue-scrollbar>
                 </div>
               </div>
-              <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 thumb-slide movil">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 thumb-slide movil">
                 <img :src="historia.imagen" class="img-fluid"/>
               </div>
             </div>
@@ -67,7 +67,7 @@
         <div class="box-select-ano">
           <!-- <v-select :options="historias.ano"></v-select> -->
           <select v-model="ano_selected" @change="onSetSelect($event)">
-            <option v-for="fecha in historias" :key="fecha.id">
+            <option v-for="(fecha,index) in historias" :key="fecha.id">
               {{ fecha.ano }}
             </option>
           </select>
@@ -100,7 +100,7 @@ export default {
     name: "Historia",
     data() {
         return {
-          ano_selected:'',
+          ano_selected:null,
           historias:[],
           swiperOption: {
             direction: 'vertical',
@@ -162,16 +162,18 @@ export default {
           this.historias.forEach(element => {
             anos.push(element.ano);
           });
+          this.ano_selected = this.historias[0].ano;
       })
       .catch(response => {
           console.log(response);
       });
-
-      // console.log('created', anos);
+      console.log('created')
     },
     mounted() {
       console.log('this.swiperthis.swiper', this.swiper)
       this.swiper.slideTo(0, 1000, false);
+
+
     }
 }
 </script>

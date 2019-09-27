@@ -8,6 +8,14 @@
               {{categoria.nombre}}
             </p>
           </router-link>
+
+        </li>
+        <li>
+          <router-link :to="`/catalogo`">
+            <p>
+              TODAS
+            </p>
+          </router-link>
         </li>
       </ul>
     </div>
