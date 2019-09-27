@@ -15,7 +15,7 @@
     </div>
     </div>
     <div class="row pt-5" v-else>
-      <div class="col-xs-6 col-sm-4 col-lg-2 col-xl-2" v-for="tienda in displayedTiendas">
+      <div class="col-xs-6 col-sm-4 col-lg-3 col-xl-3" v-for="tienda in displayedTiendas">
         <div class="box-tiendas">
           <div class="thumb">
             <div class="img">
