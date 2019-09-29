@@ -49,7 +49,7 @@
         enterAnim(done){
           // entra
           fxPgIn(this.$el, this.$refs.thumb, done);
-          console.log('this.$el', this.$el);
+          // console.log('this.$el', this.$el);
         },
         leaveAnim(done){
           // sale
