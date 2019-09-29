@@ -2,7 +2,7 @@
   <div class="container-fluid no-gutter box-home">
     <div class="wrapper-home">
       <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 thumb" v-for="categoria in categorias" ref="thumb">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 thumb" v-for="categoria in categorias" :key="categoria.id" ref="thumb">
           <router-link :to="`/catalogo/${categoria.id}`">
             <div class="box-thumb-home">
               <div class="thumb-img">
@@ -49,6 +49,7 @@
         enterAnim(done){
           // entra
           fxPgIn(this.$el, this.$refs.thumb, done);
+          console.log('this.$el', this.$el);
         },
         leaveAnim(done){
           // sale
@@ -58,9 +59,6 @@
       computed: {
 
       },
-      mounted: function(){
-        console.log('mounted');
-      },
       created: function() {
         axios.get(URL+'categoria-productos')
         .then(response => {
@@ -69,8 +67,8 @@
         .catch(response => {
             console.log(response);
         });
-
-      }
+      },
+      mounted: function(){}
   }
 </script>
 

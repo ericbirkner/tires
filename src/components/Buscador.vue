@@ -1,9 +1,9 @@
 <template>
-    
+
     <div class="col">
       <div class="box-buscador">
-        <span class="fa fa-search"></span>
         <input v-on:keyup="buscar" type="text" class="form-control" placeholder="Buscar">
+        <span class="fa fa-search"></span>
       </div>
     </div>
 
