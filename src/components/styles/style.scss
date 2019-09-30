@@ -72,6 +72,13 @@ body{
   }
 }
 
+.swiper-container-autoheight .swiper-slide{
+  height: 300px !important;
+  @include respond-to($iphone_xl) {
+    height:100vh !important;
+  }
+}
+
 
 
 // css responsive
