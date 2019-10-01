@@ -17,7 +17,7 @@
                 <img :src="historia.imagen" class="img-fluid"/>
               </div>
 
-              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                 <div class="datos-historia">
                   <h2>
                     {{historia.ano}}
@@ -38,7 +38,7 @@
                   </vue-scrollbar>
                 </div>
               </div>
-              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 thumb-slide movil">
+              <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 thumb-slide movil">
                 <img :src="historia.imagen" class="img-fluid"/>
               </div>
             </div>
@@ -138,7 +138,8 @@ export default {
       },
       enterAnim(done){
         // entra
-        fxPgInSingle(this.$el, done);
+        //fxPgInSingle(this.$el, done);
+        //la animación produce un bug y deja el menú mas abajo
       },
       leaveAnim(done){
         // sale
@@ -172,8 +173,6 @@ export default {
     mounted() {
       console.log('this.swiperthis.swiper', this.swiper)
       this.swiper.slideTo(0, 1000, false);
-
-
     }
 }
 </script>
