@@ -37,7 +37,7 @@
                   <router-link to="/historia" v-on:click.native="menuToggle"><p>HISTORIA</p></router-link>
                 </li>
                 <li>
-                  <router-link to="/informacion" v-on:click.native="menuToggle"><p>CUIDADO DEL NEUMATICO</p></router-link>
+                  <router-link to="/informacion" v-on:click.native="menuToggle"><p>CUIDADO DEL NEUMÁTICO</p></router-link>
                 </li>
                 <li>
                   <router-link to="/tiendas" v-on:click.native="menuToggle"><p>DISTRIBUIDORES</p></router-link>
@@ -46,7 +46,7 @@
                   <router-link to="/contacto" v-on:click.native="menuToggle"><p>CONTACTO</p></router-link>
                 </li>
                 <li>
-                  <a href="POLIZA-DE-GARANTIA-2019.pdf" target="_blank"><p>GARANTIA</p></a>
+                  <a href="POLIZA-DE-GARANTIA-2019.pdf" target="_blank"><p>GARANTÍA</p></a>
                 </li>
               </ul>
             </div>

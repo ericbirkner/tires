@@ -23,9 +23,9 @@
                 </div>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ref="campo3">
-                <input id="telefono" v-model="telefono" type="number" name="telefono" placeholder="TELEFONO (*)">
+                <input id="telefono" v-model="telefono" type="number" name="telefono" placeholder="TELÉFONO (*)">
                 <div class="mensaje-valid">
-                  <p v-show="validTelefono">**El telefono es obligatorio.</p>
+                  <p v-show="validTelefono">**El teléfono es obligatorio.</p>
                 </div>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ref="campo4">
