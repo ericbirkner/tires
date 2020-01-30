@@ -1,63 +1,127 @@
 <template>
-<transition name="slide-fade">
-<div class="container">
-<div class="row">
+<!-- <transition name="slide-fade"></transition> -->
 
-  <div v-if="loading" class="row text-center">
-    <div class="col">
-     <div class="spinner-border" role="status">
-       <span class="sr-only">Cargando...</span>
-     </div>
-   </div>
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- <div v-if="loading" class="row text-center">
+        <div class="col">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Cargando...</span>
+          </div>
+        </div>
+      </div> -->
+
+        <template v-if="loading">
+
+        <div class="thumb-info col-sm-3 col-sm-3" ref="thumb1">
+          <router-link :to="`/informacion/${informaciones[0].id}`">
+            <div class="bg_thumb thumb-xl web" v-bind:style="{ 'background-image': 'url(' + informaciones[0].imagen + ')' }">
+              <div class="over-thumb">
+                <div class="plus"><img src="img/plus.png" /></div>
+              </div>
+            </div>
+            <div class="bg_thumb thumb-xl movil" v-bind:style="{ 'background-image': 'url(' + informaciones[0].imagen_m + ')' }">
+              <div class="over-thumb">
+                <div class="plus"><img src="img/plus.png" /></div>
+              </div>
+            </div>
+          </router-link>
+          <div class="titulo-info">
+            <h4>{{informaciones[0].titulo}}</h4>
+          </div>
+        </div>
+
+        <div class="thumb-info col-sm-6 col-sm-6">
+          <div class="row">
+            <div class="col no-gutter" ref="thumb2">
+              <router-link :to="`/informacion/${informaciones[1].id}`">
+                <div class="bg_thumb thumb-xs" v-bind:style="{ 'background-image': 'url(' + informaciones[1].imagen + ')' }">
+                  <div class="over-thumb">
+                    <div class="plus"><img src="img/plus.png" /></div>
+                  </div>
+                </div>
+              </router-link>
+              <div class="titulo-info">
+                <h4>{{informaciones[1].titulo}}</h4>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col thumb-info no-gutter box-center-thumb" ref="thumb3">
+              <router-link :to="`/informacion/${informaciones[2].id}`">
+                <div class="bg_thumb thumb-xs" v-bind:style="{ 'background-image': 'url(' + informaciones[2].imagen + ')' }">
+                  <div class="over-thumb">
+                    <div class="plus"><img src="img/plus.png" /></div>
+                  </div>
+                </div>
+              </router-link>
+              <div class="titulo-info">
+                <h4>{{informaciones[2].titulo}}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="thumb-info col-sm-3 col-sm-3" ref="thumb4">
+          <router-link :to="`/informacion/${informaciones[3].id}`">
+            <div class="bg_thumb thumb-xl" v-bind:style="{ 'background-image': 'url(' + informaciones[3].imagen + ')' }">
+              <div class="over-thumb">
+                <div class="plus"><img src="img/plus.png" /></div>
+              </div>
+            </div>
+          </router-link>
+          <div class="titulo-info">
+            <h4>{{informaciones[3].titulo}}</h4>
+          </div>
+
+        </div>
+
+
+      </template>
+
+    </div>
   </div>
 
-
-    <div class="col-sm-3 col-sm-3 ">
-      <router-link :to="`/informacion/${informaciones[0].id}`"><img :src="informaciones[0].imagen" class="img-fluid"></router-link>
-      <h4>{{informaciones[0].titulo}}</h4>
-    </div>
-
-    <div class="col-sm-6 col-sm-6">
-      <div class="row">
-        <router-link :to="`/informacion/${informaciones[1].id}`"><img :src="informaciones[1].imagen" class="img-fluid"></router-link>
-        <h4>{{informaciones[1].titulo}}</h4>
-      </div>
-      <div class="row">
-        <router-link :to="`/informacion/${informaciones[2].id}`"><img :src="informaciones[2].imagen" class="img-fluid"></router-link>
-        <h4>{{informaciones[2].titulo}}</h4>
-      </div>
-    </div>
-
-    <div class="col-sm-3 col-sm-3">
-      <router-link :to="`/informacion/${informaciones[3].id}`"><img :src="informaciones[3].imagen" class="img-fluid"></router-link>
-      <h4>{{informaciones[3].titulo}}</h4>
-    </div>
-
-
-
-
-</div>
-</div>
-</transition>
 
 </template>
 
 <script>
-
+  import { TweenMax } from 'gsap';
+  import { fxPgIn, fxPgOut } from '../helpers/Devfun';
+  import axios from 'axios';
 export default {
     name: "Informacion",
 
     data() {
         return {
-
+          informaciones: [],
+          loading:false
         }
     },
     methods: {
       getData () {
-          this.informaciones= [{"id":1,"titulo":"PRESI\u00d3N CORRECTA DE LOS NEUM\u00c1TICOS","imagen":"http:\/\/localhost\/sumitomo-tires\/files\/koaqhkpw1xvnixf6v7zb\/cuidados-3.png"},{"id":2,"titulo":"ROTACI\u00d3N DE LOS NEUM\u00c1TICOS","imagen":"http:\/\/localhost\/sumitomo-tires\/files\/a80tlpcrgpjgu3sp58j9\/cuidados-2.png"},{"id":3,"titulo":"LEER LAS BANDAS DE RODADURA DE LOS NEUM\u00c1TICOS","imagen":"http:\/\/localhost\/sumitomo-tires\/files\/xqmebiw3jnhp68fdu59y\/3.jpg"},{"id":4,"titulo":"CU\u00c1NDO DEBO CAMBIAR LOS NEUM\u00c1TICOS","imagen":"http:\/\/localhost\/sumitomo-tires\/files\/2ysjavc0mnh1tllwav4i\/SUMITOMO2.jpg"}];
-          this.loading = false;
-          console.log(this.informaciones);
-        }
+        axios.get(URL+'informacion')
+        .then(response => {
+            this.informaciones = response.data;
+            this.loading=true;
+        })
+        .catch(response => {
+            console.log(response);
+        });
+
+        this.loading = false;
+        console.log(this.informaciones);
+      },
+      enterAnim(done){
+        // entra
+        const ArrChild = [ this.$refs.thumb1, this.$refs.thumb2, this.$refs.thumb3, this.$refs.thumb4 ];
+        fxPgIn(this.$el, ArrChild, done);
+      },
+      leaveAnim(done){
+        // sale
+        fxPgOut(this.$el, this.$refs.thumb, done);
+      }
     },
     computed: {
 
@@ -69,7 +133,7 @@ export default {
 }
 </script>
 
-<style>
-/*estilos*/
-
+<style lang="scss">
+  @import "./styles/style.scss";
+  @import "./styles/informacion.scss";
 </style>

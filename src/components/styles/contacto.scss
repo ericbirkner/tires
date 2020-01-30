@@ -1,0 +1,64 @@
+@import './util.scss';
+.box-contacto{
+  max-width:600px;
+  display:block;
+  margin: 0 auto 0 auto;
+  position: relative;
+  @include respond-to($iphone_xl) {
+    padding:0 0 30px 0;
+  }
+  h2{
+    font-family: 'FuturaStd-Book';
+    font-size:36px;
+    color: #ffffff;
+    text-align: left;
+    @include respond-to($iphone_xl) {
+      font-size:30px;
+    }
+  }
+  #contacto{
+    display:block;
+    margin:50px 0 0 0;
+    input, textarea{
+      width:100%;
+      display:block;
+      padding:7px 10px;
+      background:#ffffff;
+      border-radius:4px;
+      outline:none;
+      border:0px solid;
+      margin:5px 0;
+      color:#33598b;
+    }
+    @include placeholder(#5f646b);
+    .mensaje-valid{
+      min-height:30px;
+      font-family: 'FuturaStd-Light';
+      p{        
+        margin:0;
+        padding:4px 10px;
+        color: #ff4747;
+      }
+    }
+
+
+    .btn-enviar{
+      max-width:200px;
+      display:block;
+      margin:0 auto 0 auto;
+      border:2px solid #ffffff;
+      border-radius: 4px;
+      input{
+        background:transparent !important;
+        color:#ffffff;
+      }
+    }
+    .btn-enviar:hover{
+      border:2px solid #ffffff;
+      background:#33598b;
+      input{
+        color:#ffffff;
+      }
+    }
+  }
+}

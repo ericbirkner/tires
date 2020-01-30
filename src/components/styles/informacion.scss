@@ -1,0 +1,231 @@
+@import './util.scss';
+$height: 600px;
+.thumb-xl{
+  height:$height + 36px;
+  @include respond-to($iphone_xl) {
+    height:auto;
+  }
+}
+.thumb-xs{
+  height:$height/2;
+  @include respond-to($iphone_xl) {
+    height:auto;
+  }
+}
+.titulo-info{
+  @include respond-to($iphone_xl) {
+    position: absolute;
+    bottom:30px;
+    left:20px;
+  }
+  h4{
+    font-family: 'FuturaStd-Bold';
+    color:#ffffff;
+    font-size:26px;
+    @include respond-to($iphone_xl) {
+      font-size:16px !important;
+    }
+  }
+}
+.bg_thumb{
+  background-position: top center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  -webkit-box-shadow: 0px -7px 21px -8px rgba(0,0,0,0);
+  -moz-box-shadow: 0px -7px 21px -8px rgba(0,0,0,0);
+  box-shadow: 0px -7px 21px -8px rgba(0,0,0,0);
+  @include respond-to($iphone_xl) {
+    width:100%;
+    height:150px;
+    margin:20px 0 20px 0;
+    position: relative;
+  }
+  .over-thumb{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0);
+    opacity:0;
+    border:1px solid rgba(255,255,255,0);
+    .plus{
+      width:50px;
+      height:50px;
+      display:block;
+      position: absolute;
+      top:50%;
+      left:50%;
+      margin:-25px 0 0 -25px;
+      img{
+        width:100%;
+      }
+      @include respond-to($iphone_xl) {
+        width:35px;
+        height:35px;
+      }
+    }
+  }
+}
+.bg_thumb:hover{
+  -webkit-box-shadow: 0px -7px 21px -8px rgba(0,0,0,0.35);
+  -moz-box-shadow: 0px -7px 21px -8px rgba(0,0,0,0.35);
+  box-shadow: 0px -7px 21px -8px rgba(0,0,0,0.35);
+  .over-thumb{
+    opacity:1;
+    background:rgba(0,0,0,0.65);
+    @include transition(.5s ease);
+  }
+}
+.thumb-info {
+    h4{
+      font-size: 18px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.31;
+      letter-spacing: -0.13px;
+      text-align: left;
+      color: #ffffff;
+      margin:4px 0 10px 0;
+    }
+
+    .no-gutter{
+      @include respond-to($iphone_xl) {
+        padding-left:15px !important;
+        padding-right:15px !important;
+      }
+    }
+}
+.thumb-neumatico{
+    width:80%;
+    display:block;
+    margin:0 auto 0 auto;
+    @include respond-to($iphone_xl) {
+      width:100%;
+      max-height:200px;
+      overflow:hidden;
+    }
+    img{
+        width:100%;
+        display:block;
+    }
+}
+.box-datos-interior{
+    .wrapper{
+        max-width:90%;
+        display:block;
+        margin:0 auto 0 auto;
+        @include respond-to($iphone_xl) {
+          max-width:95%;
+        }
+        h1,h3,h4,h5,p{
+            color:#ffffff;
+            text-align: left;
+            margin: 0;
+            padding:0;
+        }
+        h3{
+          font-size:35px;
+          font-family: 'FuturaStd-Bold';
+          margin:20px 0 20px 0;
+          display: block;
+          position: relative;
+          left:-80px;
+          @include respond-to($iphone_xl) {
+            font-size:20px;
+            left:0px;
+          }
+        }
+        h5{
+          font-size:26px;
+          font-family: 'FuturaStd-Bold';
+          margin:0 0 20px 0;
+          display: block;
+          position: relative;
+          @include respond-to($iphone_xl) {
+            font-size:18px;
+            left:0px;
+            margin-top: 20px;
+          }
+        }
+        ul,ol{
+            margin:0;
+            padding:0;
+            li{
+                font-family: 'FuturaStd-Book';
+                font-size:22px;
+                display:block;
+                margin:20px 0 30px 0;
+                padding:0;
+                color:#ffffff;
+                @include respond-to($iphone_xl) {
+                  font-size:16px;
+                }
+                span{
+                  font-family: 'FuturaStd-Bold';
+                  padding:0 10px 0 0;
+                }
+            }
+        }
+    }
+}
+.interior{
+  .wrapper{
+    max-width:70%;
+    display:block;
+    margin:0 auto 0 auto;
+    @include respond-to($iphone_xl) {
+      max-width:100%;
+    }
+  }
+  .linea-dash{
+    width:40%;
+    height:2px;
+    display:block;
+    margin:20px auto 20px auto;
+    border-top:1px dashed #ffffff ;
+  }
+  .punto{
+    width:10px;
+    height:10px;
+    background: #ffffff;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto 20px auto;
+  }
+  .icono{
+    width:80px;
+    height: 80px;
+    display:block;
+    margin:0 auto 20px auto;
+    img{
+      width: 100%;
+    }
+  }
+  .body-copy{
+    p{
+      text-align: center;
+      color: #ffffff;
+      font-size:22px;
+      font-family: 'FuturaStd-Book';
+      text-align: center;
+      color: #ffffff;
+      @include respond-to($iphone_xl) {
+        font-size:18px;
+      }
+    }
+  }
+  .titulo{
+    h4{
+      font-size:35px;
+      font-family: 'FuturaStd-Bold';
+      text-align: center;
+      color: #ffffff;
+      @include respond-to($iphone_xl) {
+        font-size:20px;
+      }
+    }
+  }
+}
